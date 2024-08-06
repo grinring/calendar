@@ -21,12 +21,31 @@ struct CalendarModel{
             components.day = day
             if let date = calendar.date(from: components){
                 let weekdayFormatter = DateFormatter()
-                weekdayFormatter.dateFormat = "EEEE"
+                weekdayFormatter.dateFormat = "EEE"
                 let weekday = weekdayFormatter.string(from: date)
                 data.append((day: day, weekday: weekday))
             } else { continue }
         }
         return data
+    }
+    
+    static func splitDateIntoSections(data:[(day:Int,weekday:String)]) -> [[(day:Int,weekday:String)]]{
+        let numberOfDaysInWeek = 7
+        var sections:[[(day:Int,weekday:String)]] = []
+        var currentSection:[(day:Int,weekday:String)] = []
+        
+        for (index,item) in data.enumerated(){
+            currentSection.append(item)
+            if (index+1)%numberOfDaysInWeek == 0{
+                sections.append(currentSection)
+                currentSection = []
+            }
+        }
+        
+        if !currentSection.isEmpty{
+            sections.append(currentSection)
+        }
+        return sections
     }
 }
 
