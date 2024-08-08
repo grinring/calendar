@@ -9,10 +9,25 @@ import Foundation
 
 struct CalendarModel{
     
+    static func fideOutTodayData()->(year:Int, month:Int, day:Int, weekday:String){
+        let calendar = Calendar.current,
+            currentDate = Date()
+        
+        let yearData = calendar.component(.year, from: Date()),
+            monthData = calendar.component(.month, from: Date()),
+            dayData = calendar.component(.day, from: Date()),
+            weekdayData:String = ""
+        
+        if let weekday = calendar.date(from: DateComponents(year: yearData, month: monthData, day:dayData)){
+            let formatter = DateFormatter()
+            formatter.dateFormat = "EEEE"
+            let weekdayData = formatter.string(from: weekday)
+        }
+        return ( year:yearData, month:monthData, day:dayData, weekday:weekdayData )
+    }
+    
     static func createModel(year:Int,month:Int) -> [(Int,String)]?{
-        
         var data:[(day:Int,weekday:String)] = []
-        
         let calendar = Calendar.current
         var components = DateComponents(year:year,month:month)
         guard let startDateOfMonth = calendar.date(from: components) else { return nil }

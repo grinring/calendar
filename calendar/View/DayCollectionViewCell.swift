@@ -9,7 +9,6 @@ import UIKit
 
 class DayCollectionViewCell: UICollectionViewCell {
     
-    
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var weekdayLabel: UILabel!
     

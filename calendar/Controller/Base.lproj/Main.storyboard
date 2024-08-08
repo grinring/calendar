@@ -23,11 +23,52 @@
                                         <rect key="frame" x="8" y="15" width="75" height="67"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uy0-vp-UG9">
+                                        <rect key="frame" x="91" y="47.5" width="160" height="34.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6J-mv-4ZJ" userLabel="Year Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="34.5"/>
+                                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <buttonConfiguration key="configuration" style="tinted" title="Button">
+                                                    <fontDescription key="titleFontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                    <color key="baseForegroundColor" systemColor="viewFlipsideBackgroundColor"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="yearButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TSZ-LX-gAd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v46-xV-ysK" userLabel="Month Button">
+                                                <rect key="frame" x="85" y="0.0" width="75" height="34.5"/>
+                                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="tinted">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Button"/>
+                                                    </attributedString>
+                                                    <color key="baseForegroundColor" systemColor="viewFlipsideBackgroundColor"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="monthButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GBL-Qu-UOO"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="linkColor"/>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIk-Gk-38S">
+                                        <rect key="frame" x="91" y="21" width="41.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="uy0-vp-UG9" secondAttribute="bottom" constant="15" id="2Gf-rY-vEA"/>
+                                    <constraint firstItem="uy0-vp-UG9" firstAttribute="top" secondItem="RIk-Gk-38S" secondAttribute="bottom" constant="6" id="9qR-iB-D2x"/>
+                                    <constraint firstItem="RIk-Gk-38S" firstAttribute="leading" secondItem="VN3-0h-06A" secondAttribute="trailing" constant="8" id="BOG-3d-GiU"/>
                                     <constraint firstAttribute="bottom" secondItem="VN3-0h-06A" secondAttribute="bottom" constant="15" id="Ovn-SX-ciW"/>
                                     <constraint firstItem="VN3-0h-06A" firstAttribute="top" secondItem="dah-lI-D7t" secondAttribute="top" constant="15" id="PHX-h6-nsy"/>
+                                    <constraint firstItem="uy0-vp-UG9" firstAttribute="leading" secondItem="VN3-0h-06A" secondAttribute="trailing" constant="8" id="RUP-U4-Aaj"/>
                                     <constraint firstItem="VN3-0h-06A" firstAttribute="leading" secondItem="dah-lI-D7t" secondAttribute="leading" constant="8" id="b0G-pn-dFh"/>
                                 </constraints>
                             </view>
@@ -47,10 +88,10 @@
                                     </collectionView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="bGw-51-MIQ" secondAttribute="trailing" constant="5" id="5cQ-iH-Fpf"/>
-                                    <constraint firstItem="bGw-51-MIQ" firstAttribute="top" secondItem="PJT-J5-2Jk" secondAttribute="top" constant="5" id="GRv-89-G5f"/>
-                                    <constraint firstItem="bGw-51-MIQ" firstAttribute="leading" secondItem="PJT-J5-2Jk" secondAttribute="leading" constant="5" id="IcF-AQ-kfW"/>
-                                    <constraint firstAttribute="bottom" secondItem="bGw-51-MIQ" secondAttribute="bottom" constant="5" id="eax-NC-VmI"/>
+                                    <constraint firstItem="bGw-51-MIQ" firstAttribute="leading" secondItem="PJT-J5-2Jk" secondAttribute="leading" constant="5" id="5B8-Xe-7q0"/>
+                                    <constraint firstAttribute="bottom" secondItem="bGw-51-MIQ" secondAttribute="bottom" constant="5" id="7wR-Bn-XSS"/>
+                                    <constraint firstAttribute="trailing" secondItem="bGw-51-MIQ" secondAttribute="trailing" constant="5" id="clY-H6-6MZ"/>
+                                    <constraint firstItem="bGw-51-MIQ" firstAttribute="top" secondItem="PJT-J5-2Jk" secondAttribute="top" constant="5" id="e4u-Kt-7gM"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4os-0d-IK5" userLabel="Time Schedule View">
@@ -86,25 +127,33 @@
                     </view>
                     <connections>
                         <outlet property="dayCollectionView" destination="bGw-51-MIQ" id="g5a-6v-Mc0"/>
+                        <outlet property="monthButton" destination="v46-xV-ysK" id="A8O-v5-EZM"/>
+                        <outlet property="yearButton" destination="A6J-mv-4ZJ" id="KwL-fJ-yLc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="122.40000000000001" y="-27.436281859070466"/>
+            <point key="canvasLocation" x="-185" y="-71"/>
         </scene>
     </scenes>
     <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemMintColor">
-            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="viewFlipsideBackgroundColor">
+            <color red="0.12156862745098039" green="0.12941176470588237" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
