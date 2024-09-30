@@ -21,6 +21,8 @@ class OmoideRootView: UIView {
     private lazy var contentView: UIView = {
         let view = UIView()
         view.addSubview(toggleContentStackView)
+        view.addSubview(sortButton)
+        view.addSubview(collectionView)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -70,6 +72,57 @@ class OmoideRootView: UIView {
     
     //MARK: - sort button -
     
+    private lazy var sortButton:UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        sortButtonContents.isUserInteractionEnabled = false
+        button.addSubview(sortButtonContents)
+        button.backgroundColor = .clear
+        button.addTarget(self, action: #selector(sort), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var sortButtonContents:UIStackView = {
+        let label = UILabel()
+        label.text = "デフォルト"
+        label.font = CustomFont.subCaption
+        let icon = IMG.iconSort.resizeImage(width: 20, height: 20)
+        let imageView = UIImageView(image: icon)
+        let stackView = UIStackView(arrangedSubviews: [label,imageView])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .horizontal
+        stackView.distribution = .fillProportionally
+        stackView.alignment = .center
+        return stackView
+    }()
+    
+    //MARK: - collection view
+    lazy var collectionView:UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = Size.itemMargin
+        
+        if Size.setupSizePattern() == SizePattern.S {
+            layout.itemSize = CGSize(width: 51, height: 49)}
+        else if Size.setupSizePattern() == SizePattern.L{
+            layout.itemSize = CGSize(width: 66, height: 68)}
+        else {
+            layout.itemSize = CGSize(width:57, height: 58)}
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .clear
+        
+        if Size.setupSizePattern() == SizePattern.S {
+            collectionView.heightAnchor.constraint(equalToConstant: 49).isActive = true}
+        else if Size.setupSizePattern() == SizePattern.L{
+            collectionView.heightAnchor.constraint(equalToConstant: 68).isActive = true}
+        else {
+            collectionView.heightAnchor.constraint(equalToConstant: 58).isActive = true}
+        
+        return collectionView
+    }()
+    
     //MARK: - init method -
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -83,7 +136,7 @@ class OmoideRootView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
+        print(UIFont.preferredFont(forTextStyle: .body).pointSize)
         //iphoneの初期状態のfontsize(body)=19より大きく設定している人はverticalに
         if UIFont.preferredFont(forTextStyle: .body).pointSize >= 19 {
             toggleContentStackView.axis = .vertical
@@ -106,6 +159,10 @@ class OmoideRootView: UIView {
     //MARK: - objc func -
     @objc func toggle(){
         print("toggle button taped...")
+    }
+    
+    @objc func sort(){
+        print("sort button tapped...")
     }
     
 
@@ -148,7 +205,19 @@ extension OmoideRootView {
         NSLayoutConstraint.activate([
             toggleContentStackView.topAnchor.constraint(equalTo: contentView.topAnchor),
             toggleContentStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            toggleContentStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
+            toggleContentStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            
+            sortButton.topAnchor.constraint(equalTo: toggleContentStackView.bottomAnchor, constant: CustomSize.contensMargin),
+            sortButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            sortButton.widthAnchor.constraint(equalTo: sortButtonContents.widthAnchor, constant: 20),
+            sortButton.heightAnchor.constraint(equalToConstant: 36),
+            
+            sortButtonContents.centerXAnchor.constraint(equalTo: sortButton.centerXAnchor),
+            sortButtonContents.centerYAnchor.constraint(equalTo: sortButton.centerYAnchor),
+            
+            collectionView.topAnchor.constraint(equalTo: sortButton.bottomAnchor, constant: Size.contensMargin),
+            collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
         ])
     }
 }

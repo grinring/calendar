@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class Buttons{
+    
     static func createButton(title: String, image: UIImage?) -> UIButton {
         let button = UIButton(type: .system)
         button.setTitle(title, for: .normal)

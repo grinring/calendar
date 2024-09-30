@@ -21,6 +21,8 @@ internal struct CustomImage {
     //icon
     static let iconAlbum:UIImage = UIImage(systemName: "photo.on.rectangle.angled")!
     static let iconMap:UIImage = UIImage(systemName:"map")!
+    static let iconSort:UIImage = UIImage(systemName:"slider.horizontal.3")!
     
     //image
+    static let userIcon:UIImage = UIImage(named:"userIcon")!
 }

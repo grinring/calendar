@@ -8,6 +8,12 @@
 import Foundation
 import UIKit
 
+typealias Size = CustomSize
+
+enum SizePattern {
+    case S,M,L
+}
+
 struct CustomSize {
     //MARK: - font size
     //bodyが20pointの時、24Point ,最大28
@@ -28,4 +34,18 @@ struct CustomSize {
     
     //MARK: - view size
     static let minimumButtonSize:CGFloat = 44
+    
+    static func setupSizePattern()->SizePattern{
+        let systemSize = UIFont.preferredFont(forTextStyle: .body).pointSize
+        switch systemSize{
+        case 14,15,16:
+            return SizePattern.S
+        case 17,19:
+            return SizePattern.M
+        case 21,23:
+            return SizePattern.L
+        default:
+            return SizePattern.M
+        }
+    }
 }

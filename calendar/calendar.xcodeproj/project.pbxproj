@@ -31,12 +31,14 @@
 		F02354B62CA6F58C005F6E20 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354B52CA6F58C005F6E20 /* Buttons.swift */; };
 		F02354B82CA70862005F6E20 /* ColorAsset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F02354B72CA70862005F6E20 /* ColorAsset.xcassets */; };
 		F02354BA2CA709B8005F6E20 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354B92CA709B8005F6E20 /* CustomColor.swift */; };
-		F02354BE2CA83E75005F6E20 /* CustomSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354BD2CA83E75005F6E20 /* CustomSelector.swift */; };
 		F02354C02CA84232005F6E20 /* CustomMenus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354BF2CA84232005F6E20 /* CustomMenus.swift */; };
 		F02354C22CA864D3005F6E20 /* CustomSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354C12CA864D3005F6E20 /* CustomSize.swift */; };
 		F02354C42CA8FB13005F6E20 /* UImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354C32CA8FB13005F6E20 /* UImage.swift */; };
 		F02354C62CA93840005F6E20 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354C52CA93840005F6E20 /* CustomFont.swift */; };
 		F02354C82CA93DB4005F6E20 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354C72CA93DB4005F6E20 /* UILabel.swift */; };
+		F02354CA2CA98C91005F6E20 /* UserIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354C92CA98C91005F6E20 /* UserIconView.swift */; };
+		F02354CC2CA9BBD1005F6E20 /* UserIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354CB2CA9BBD1005F6E20 /* UserIconCollectionViewCell.swift */; };
+		F02354CE2CA9BD2E005F6E20 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354CD2CA9BD2E005F6E20 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,12 +68,14 @@
 		F02354B52CA6F58C005F6E20 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		F02354B72CA70862005F6E20 /* ColorAsset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAsset.xcassets; sourceTree = "<group>"; };
 		F02354B92CA709B8005F6E20 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
-		F02354BD2CA83E75005F6E20 /* CustomSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSelector.swift; sourceTree = "<group>"; };
 		F02354BF2CA84232005F6E20 /* CustomMenus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMenus.swift; sourceTree = "<group>"; };
 		F02354C12CA864D3005F6E20 /* CustomSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSize.swift; sourceTree = "<group>"; };
 		F02354C32CA8FB13005F6E20 /* UImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UImage.swift; sourceTree = "<group>"; };
 		F02354C52CA93840005F6E20 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		F02354C72CA93DB4005F6E20 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		F02354C92CA98C91005F6E20 /* UserIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIconView.swift; sourceTree = "<group>"; };
+		F02354CB2CA9BBD1005F6E20 /* UserIconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIconCollectionViewCell.swift; sourceTree = "<group>"; };
+		F02354CD2CA9BD2E005F6E20 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,7 +207,9 @@
 		F02354B42CA6F4BC005F6E20 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				F02354BD2CA83E75005F6E20 /* CustomSelector.swift */,
+				F02354C92CA98C91005F6E20 /* UserIconView.swift */,
+				F02354CB2CA9BBD1005F6E20 /* UserIconCollectionViewCell.swift */,
+				F02354CD2CA9BD2E005F6E20 /* UserModel.swift */,
 				F02354B52CA6F58C005F6E20 /* Buttons.swift */,
 				F02354BF2CA84232005F6E20 /* CustomMenus.swift */,
 			);
@@ -291,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F02354B62CA6F58C005F6E20 /* Buttons.swift in Sources */,
+				F02354CA2CA98C91005F6E20 /* UserIconView.swift in Sources */,
 				F02354A62CA6F229005F6E20 /* SettingRootModel.swift in Sources */,
 				F02354A42CA6F170005F6E20 /* SearchRootView.swift in Sources */,
 				F02354C62CA93840005F6E20 /* CustomFont.swift in Sources */,
@@ -313,10 +320,11 @@
 				F023549C2CA6F110005F6E20 /* ScheduleRootView.swift in Sources */,
 				F02354AA2CA6F250005F6E20 /* SchduleRootModel.swift in Sources */,
 				F023549E2CA6F124005F6E20 /* CalendarRootView.swift in Sources */,
+				F02354CC2CA9BBD1005F6E20 /* UserIconCollectionViewCell.swift in Sources */,
 				F02354C22CA864D3005F6E20 /* CustomSize.swift in Sources */,
 				F02354852CA6D38F005F6E20 /* MainTabBarController.swift in Sources */,
+				F02354CE2CA9BD2E005F6E20 /* UserModel.swift in Sources */,
 				F02354902CA6F07B005F6E20 /* OmoideRootViewController.swift in Sources */,
-				F02354BE2CA83E75005F6E20 /* CustomSelector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
