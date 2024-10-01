@@ -1,9 +1,4 @@
-//
-//  UserIconCollectionViewCell.swift
-//  calendar
-//
-//  Created by Rintaro Tsuji on 2024/09/30.
-//
+
 
 import UIKit
 
@@ -30,7 +25,7 @@ class UserIconCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    func setupCell(userFirstName: String, userLastName: String, userImage: UIImage?) {
+    func setupUserCell(userFirstName: String, userLastName: String, userImage: UIImage?) {
         self.userFirstName = userFirstName
         self.userLastName = userLastName
         self.userImage = userImage
@@ -54,13 +49,14 @@ class UserIconCollectionViewCell: UICollectionViewCell {
         nameLabel.text = setupUserFullName()
         // 画像が設定されている場合
         if let userImage = userImage {
-            let img = userImage.cutOutCircle()
-            userImageView.image = img
+            userImageView.image = userImage
+            userImageView.layer.cornerRadius = userImageView.frame.size.width / 2
             addSubview(userImageView)
             addSubview(nameLabel)
         } else {
             // 画像がない場合のプレースホルダー処理
             userImageView.backgroundColor = .lightGray
+            userImageView.layer.cornerRadius = userImageView.frame.size.width / 2
             addSubview(userImageView)
             addSubview(nameLabel)
         }
@@ -97,6 +93,7 @@ class UserIconCollectionViewCell: UICollectionViewCell {
                 userImageView.heightAnchor.constraint(equalToConstant: 36)
             ])
         }
+        
     }
     
 }

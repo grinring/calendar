@@ -1,28 +1,30 @@
-//
-//  OmoideRootView.swift
-//  calendar
-//
-//  Created by Rintaro Tsuji on 2024/09/27.
-//
+
 import UIKit
 
 class OmoideRootView: UIView {
     
     private let contentsAreaMargin: CGFloat = 12
     
-    private lazy var controllersView: UIView = {
+    private lazy var superView:UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Col.base
         return view
     }()
     
-    //MARK: - content stack view -
-    private lazy var contentView: UIView = {
+    private lazy var scrollView:UIScrollView = {
+        let scrollVeiw = UIScrollView()
+        scrollVeiw.translatesAutoresizingMaskIntoConstraints = false
+        scrollVeiw.backgroundColor = .gray
+        return scrollVeiw
+    }()
+    
+    //MARK: - contentsview -
+    private lazy var contentsView: UIView = {
         let view = UIView()
         view.addSubview(toggleContentStackView)
         view.addSubview(sortButton)
-        view.addSubview(collectionView)
+        view.addSubview(friendsCollectionView)
+        view.addSubview(albumCollectionView)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -97,7 +99,7 @@ class OmoideRootView: UIView {
     }()
     
     //MARK: - collection view
-    lazy var collectionView:UICollectionView = {
+    lazy var friendsCollectionView:UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = Size.itemMargin
@@ -111,6 +113,7 @@ class OmoideRootView: UIView {
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.tag = 1
         collectionView.backgroundColor = .clear
         
         if Size.setupSizePattern() == SizePattern.S {
@@ -123,21 +126,35 @@ class OmoideRootView: UIView {
         return collectionView
     }()
     
+    lazy var albumCollectionView:UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumInteritemSpacing = Size.itemMargin
+        layout.itemSize = CGSize(width: 180, height: 200)
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.tag = 2
+        collectionView.backgroundColor = .clear
+        return collectionView
+    }()
+    
     //MARK: - init method -
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupSubviews()
-        setupLayout()
+        
+        addSubview(superView)
+        superView.addSubview(scrollView)
+        scrollView.addSubview(contentsView)
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
+    //レイアウト変更時の処理
     override func layoutSubviews() {
         super.layoutSubviews()
-        print(UIFont.preferredFont(forTextStyle: .body).pointSize)
-        //iphoneの初期状態のfontsize(body)=19より大きく設定している人はverticalに
         if UIFont.preferredFont(forTextStyle: .body).pointSize >= 19 {
             toggleContentStackView.axis = .vertical
             adjustFontSizeToFit()
@@ -150,11 +167,8 @@ class OmoideRootView: UIView {
         toggleContentStackView.layoutIfNeeded()
     }
     
-    //MARK: - set up method -
-    func setupSubviews() {
-        addSubview(controllersView)
-        controllersView.addSubview(contentView)
-    }
+    
+
     
     //MARK: - objc func -
     @objc func toggle(){
@@ -184,40 +198,51 @@ extension OmoideRootView {
         showMapButton.titleLabel?.font = albumTitleLabel.font
     }
 
-    private func setupLayout() {
-        NSLayoutConstraint.activate([
-            controllersView.topAnchor.constraint(equalTo: self.topAnchor),
-            controllersView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            controllersView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            controllersView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            
-            contentView.topAnchor.constraint(
-                // インスタンスが UIViewController に追加されると、その UIView は UIViewController の safeAreaLayoutGuide を参照。
-                equalTo: self.safeAreaLayoutGuide.topAnchor, constant: CustomSize.viewMargin),
-            contentView.trailingAnchor.constraint(
-                equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -CustomSize.viewMargin),
-            contentView.bottomAnchor.constraint(
-                equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -CustomSize.viewMargin),
-            contentView.leadingAnchor.constraint(
-                equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: CustomSize.viewMargin),
-        ])
+    func setupLayout() {
         
         NSLayoutConstraint.activate([
-            toggleContentStackView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            toggleContentStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            toggleContentStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            superView.topAnchor.constraint(equalTo: self.topAnchor),
+            superView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            superView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            superView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             
+            scrollView.topAnchor.constraint(equalTo: superView.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo:superView.bottomAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: superView.trailingAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: superView.leadingAnchor),
+
+            contentsView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: Size.contensMargin),
+            contentsView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -Size.viewMargin),
+            contentsView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: Size.viewMargin),
+            contentsView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -Size.viewMargin * 2),
+            contentsView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            //最後にここを完成させる
+            contentsView.heightAnchor.constraint(equalTo:scrollView.heightAnchor)
+        ])
+
+        NSLayoutConstraint.activate([
+            toggleContentStackView.topAnchor.constraint(equalTo: contentsView.topAnchor),
+            toggleContentStackView.trailingAnchor.constraint(equalTo: contentsView.trailingAnchor),
+            toggleContentStackView.leadingAnchor.constraint(equalTo: contentsView.leadingAnchor),
+
             sortButton.topAnchor.constraint(equalTo: toggleContentStackView.bottomAnchor, constant: CustomSize.contensMargin),
-            sortButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            sortButton.trailingAnchor.constraint(equalTo: contentsView.trailingAnchor),
             sortButton.widthAnchor.constraint(equalTo: sortButtonContents.widthAnchor, constant: 20),
             sortButton.heightAnchor.constraint(equalToConstant: 36),
-            
+
             sortButtonContents.centerXAnchor.constraint(equalTo: sortButton.centerXAnchor),
             sortButtonContents.centerYAnchor.constraint(equalTo: sortButton.centerYAnchor),
+
+            friendsCollectionView.topAnchor.constraint(equalTo: sortButton.bottomAnchor, constant: Size.contensMargin),
+            //contentsViewから逆にはみ出してスクロール感を出す
+            friendsCollectionView.trailingAnchor.constraint(equalTo: contentsView.trailingAnchor, constant: Size.viewMargin),
+            friendsCollectionView.leadingAnchor.constraint(equalTo: contentsView.leadingAnchor),
             
-            collectionView.topAnchor.constraint(equalTo: sortButton.bottomAnchor, constant: Size.contensMargin),
-            collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            albumCollectionView.topAnchor.constraint(equalTo: friendsCollectionView.bottomAnchor, constant: Size.contensMargin),
+            albumCollectionView.trailingAnchor.constraint(equalTo: contentsView.trailingAnchor),
+            albumCollectionView.leadingAnchor.constraint(equalTo: contentsView.leadingAnchor),
+            albumCollectionView.bottomAnchor.constraint(equalTo: contentsView.bottomAnchor)
         ])
     }
+
 }

@@ -1,9 +1,3 @@
-//
-//  color.swift
-//  calendar
-//
-//  Created by Rintaro Tsuji on 2024/09/27.
-//
 
 import Foundation
 import UIKit
@@ -24,5 +18,6 @@ internal struct CustomImage {
     static let iconSort:UIImage = UIImage(systemName:"slider.horizontal.3")!
     
     //image
-    static let userIcon:UIImage = UIImage(named:"userIcon")!
+    static let defaultUserIcon:UIImage = UIImage(named:"userIcon")!
+    static let defaultAlbumImage:UIImage = UIImage(named:"defaultAlbumImage")!
 }

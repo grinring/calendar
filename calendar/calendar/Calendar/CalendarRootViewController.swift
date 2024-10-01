@@ -1,29 +1,19 @@
-//
-//  CalendarViewController.swift
-//  calendar
-//
-//  Created by Rintaro Tsuji on 2024/09/27.
-//
 
 import UIKit
 
 class CalendarRootViewController: UIViewController {
-
+    
+    private(set) lazy var caldenderRootView = CalendarRootView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.view.addSubview(caldenderRootView)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        caldenderRootView.frame = view.bounds.inset(by: view.safeAreaInsets)
+        caldenderRootView.setupLayout()
     }
-    */
 
 }

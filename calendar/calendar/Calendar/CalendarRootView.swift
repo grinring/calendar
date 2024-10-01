@@ -1,20 +1,25 @@
-//
-//  CalendarRoot.swift
-//  calendar
-//
-//  Created by Rintaro Tsuji on 2024/09/27.
-//
 
 import UIKit
 
 class CalendarRootView: UIView {
+    
+    private lazy var contentsView = {
+        let view = UIView()
+        view.backgroundColor = .gray
+        return view
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        addSubview(contentsView)
+    }
+    
+    func setupLayout(){
+        contentsView.frame = self.bounds
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-
+    
 }

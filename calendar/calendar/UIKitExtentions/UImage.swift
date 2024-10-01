@@ -1,9 +1,3 @@
-//
-//  UImage.swift
-//  calendar
-//
-//  Created by Rintaro Tsuji on 2024/09/29.
-//
 
 import Foundation
 import UIKit
@@ -19,9 +13,10 @@ extension UIImage{
         return resizedImage
     }
     
+    //処理が重いため使用しない.変わりにUIImageViewを丸く、
     func cutOutCircle()->UIImage?{
-        let imageWidth = self.size.width
-        let imageHeight = self.size.height
+        let imageWidth = self.size.width * self.scale
+        let imageHeight = self.size.height * self.scale
         let renderLength = min(imageWidth,imageHeight)
         let cropRect = CGRect(x: (imageWidth-renderLength)/2, 
                               y: (imageHeight-renderLength)/2,
@@ -36,6 +31,6 @@ extension UIImage{
             context.cgContext.clip()
             croppedImage.draw(in: CGRect(x: 0, y: 0, width: renderLength, height: renderLength))
         }
-        return croppedImage
+        return circleImage
     }
 }
