@@ -24,7 +24,7 @@ extension MainTabBarController {
     }
     
     func setupViewControllers() {
-        let searchNavController = createNavController(for: SearchRootViewController(),
+        let searchNavController = createNavController(for: OmoideRootViewController(),
                                                       title: "探す",
                                                       image: CustomImage.tab00,
                                                       tag: 0)
@@ -61,7 +61,7 @@ extension MainTabBarController {
     func configureTabBar() {
         tabBar.tintColor = Col.accent
         tabBar.unselectedItemTintColor = UIColor.systemGray
-        tabBar.backgroundColor = Col.defaultBackground ?? .systemBackground
+        tabBar.backgroundColor = Col.defaultBackground
         
         tabBar.layer.borderWidth = 0.5
         tabBar.layer.borderColor = UIColor.systemGray.cgColor

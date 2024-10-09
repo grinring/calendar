@@ -16,6 +16,10 @@ internal struct CustomImage {
     static let iconAlbum:UIImage = UIImage(systemName: "photo.on.rectangle.angled")!
     static let iconMap:UIImage = UIImage(systemName:"map")!
     static let iconSort:UIImage = UIImage(systemName:"slider.horizontal.3")!
+    static let iconAddSchedule:UIImage = UIImage(systemName:"calendar.badge.plus")!
+    static let aFriend:UIImage = UIImage(named:"friend")!
+    static let allFriends:UIImage = UIImage(named:"allFriends")!
+    static let addFriend:UIImage = UIImage(named:"addFriend")!
     
     //image
     static let defaultUserIcon:UIImage = UIImage(named:"userIcon")!

@@ -13,21 +13,16 @@
 		F023547D2CA6CB7A005F6E20 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F023547C2CA6CB7A005F6E20 /* Base */; };
 		F02354852CA6D38F005F6E20 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354842CA6D38F005F6E20 /* MainTabBarController.swift */; };
 		F02354892CA6D7D5005F6E20 /* CustomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354882CA6D7D5005F6E20 /* CustomImage.swift */; };
-		F023548B2CA6F034005F6E20 /* SearchRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F023548A2CA6F034005F6E20 /* SearchRootViewController.swift */; };
-		F02354902CA6F07B005F6E20 /* OmoideRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F023548F2CA6F07B005F6E20 /* OmoideRootViewController.swift */; };
+		F023548B2CA6F034005F6E20 /* OmoideRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F023548A2CA6F034005F6E20 /* OmoideRootViewController.swift */; };
 		F02354922CA6F096005F6E20 /* ScheduleRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354912CA6F096005F6E20 /* ScheduleRootViewController.swift */; };
 		F02354942CA6F0A3005F6E20 /* CalendarRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354932CA6F0A3005F6E20 /* CalendarRootViewController.swift */; };
 		F02354962CA6F0B1005F6E20 /* SettingRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354952CA6F0B1005F6E20 /* SettingRootViewController.swift */; };
 		F02354982CA6F0ED005F6E20 /* SettingRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354972CA6F0ED005F6E20 /* SettingRootView.swift */; };
-		F023549A2CA6F0FF005F6E20 /* OmoideRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354992CA6F0FF005F6E20 /* OmoideRootView.swift */; };
-		F023549C2CA6F110005F6E20 /* ScheduleRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F023549B2CA6F110005F6E20 /* ScheduleRootView.swift */; };
 		F023549E2CA6F124005F6E20 /* CalendarRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F023549D2CA6F124005F6E20 /* CalendarRootView.swift */; };
-		F02354A42CA6F170005F6E20 /* SearchRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354A32CA6F170005F6E20 /* SearchRootView.swift */; };
+		F02354A42CA6F170005F6E20 /* OmoideRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354A32CA6F170005F6E20 /* OmoideRootView.swift */; };
 		F02354A62CA6F229005F6E20 /* SettingRootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354A52CA6F229005F6E20 /* SettingRootModel.swift */; };
-		F02354A82CA6F23C005F6E20 /* OmoideRootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354A72CA6F23C005F6E20 /* OmoideRootModel.swift */; };
 		F02354AA2CA6F250005F6E20 /* SchduleRootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354A92CA6F250005F6E20 /* SchduleRootModel.swift */; };
 		F02354AC2CA6F25F005F6E20 /* CalendarRootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354AB2CA6F25F005F6E20 /* CalendarRootModel.swift */; };
-		F02354AE2CA6F26C005F6E20 /* SearchRootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354AD2CA6F26C005F6E20 /* SearchRootModel.swift */; };
 		F02354B82CA70862005F6E20 /* ColorAsset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F02354B72CA70862005F6E20 /* ColorAsset.xcassets */; };
 		F02354BA2CA709B8005F6E20 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354B92CA709B8005F6E20 /* CustomColor.swift */; };
 		F02354C02CA84232005F6E20 /* CustomMenus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354BF2CA84232005F6E20 /* CustomMenus.swift */; };
@@ -35,12 +30,24 @@
 		F02354C42CA8FB13005F6E20 /* UImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354C32CA8FB13005F6E20 /* UImage.swift */; };
 		F02354C62CA93840005F6E20 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354C52CA93840005F6E20 /* CustomFont.swift */; };
 		F02354C82CA93DB4005F6E20 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354C72CA93DB4005F6E20 /* UILabel.swift */; };
-		F02354CC2CA9BBD1005F6E20 /* UserIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354CB2CA9BBD1005F6E20 /* UserIconCollectionViewCell.swift */; };
-		F02354CE2CA9BD2E005F6E20 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02354CD2CA9BD2E005F6E20 /* UserModel.swift */; };
 		F0BEDA8D2CAAF66400C20D85 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDA8C2CAAF66400C20D85 /* UIViewController.swift */; };
-		F0BEDA902CABC7EF00C20D85 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDA8F2CABC7EF00C20D85 /* AlbumCollectionViewCell.swift */; };
-		F0BEDA922CAC341800C20D85 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDA912CAC341800C20D85 /* AlbumModel.swift */; };
-		F0BEDA942CAC403700C20D85 /* TestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDA932CAC403700C20D85 /* TestCollectionViewCell.swift */; };
+		F0BEDA9C2CAF135800C20D85 /* ScheduleRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDA9B2CAF135800C20D85 /* ScheduleRootView.swift */; };
+		F0BEDAA02CB02C6F00C20D85 /* CalenderUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDA9F2CB02C6F00C20D85 /* CalenderUseCase.swift */; };
+		F0BEDAA22CB154BA00C20D85 /* ChangeDisplayFormatButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDAA12CB154BA00C20D85 /* ChangeDisplayFormatButtonsView.swift */; };
+		F0BEDAA42CB1568E00C20D85 /* Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDAA32CB1568E00C20D85 /* Custom.swift */; };
+		F0BEDAA82CB28A4B00C20D85 /* FriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDAA72CB28A4B00C20D85 /* FriendCollectionViewCell.swift */; };
+		F0BEDAAC2CB3993900C20D85 /* FriendsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDAAB2CB3993900C20D85 /* FriendsCollectionView.swift */; };
+		F0BEDAB02CB3D01D00C20D85 /* albumCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDAAF2CB3D01D00C20D85 /* albumCollectionView.swift */; };
+		F0BEDAB22CB3D03100C20D85 /* albumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDAB12CB3D03100C20D85 /* albumCollectionViewCell.swift */; };
+		F0BEDAE22CB4D72500C20D85 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDAE12CB4D72500C20D85 /* LoginViewController.swift */; };
+		F0BEDAE42CB4D74000C20D85 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDAE32CB4D74000C20D85 /* RegisterViewController.swift */; };
+		F0BEDAE62CB4DD9800C20D85 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDAE52CB4DD9800C20D85 /* UserModel.swift */; };
+		F0BEDAE82CB4DDA700C20D85 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDAE72CB4DDA700C20D85 /* TestData.swift */; };
+		F0BEDAEA2CB4DDB600C20D85 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDAE92CB4DDB600C20D85 /* DataStore.swift */; };
+		F0BEDB032CB520C500C20D85 /* UUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDB022CB520C500C20D85 /* UUID.swift */; };
+		F0BEDB082CB64DA500C20D85 /* AlbumCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDB042CB64DA500C20D85 /* AlbumCollectionViewModel.swift */; };
+		F0BEDB092CB64DA500C20D85 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDB052CB64DA500C20D85 /* AlbumModel.swift */; };
+		F0BEDB0A2CB64DA500C20D85 /* FriendsCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDB062CB64DA500C20D85 /* FriendsCollectionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,21 +59,16 @@
 		F023547E2CA6CB7A005F6E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F02354842CA6D38F005F6E20 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		F02354882CA6D7D5005F6E20 /* CustomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImage.swift; sourceTree = "<group>"; };
-		F023548A2CA6F034005F6E20 /* SearchRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRootViewController.swift; sourceTree = "<group>"; };
-		F023548F2CA6F07B005F6E20 /* OmoideRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmoideRootViewController.swift; sourceTree = "<group>"; };
+		F023548A2CA6F034005F6E20 /* OmoideRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmoideRootViewController.swift; sourceTree = "<group>"; };
 		F02354912CA6F096005F6E20 /* ScheduleRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRootViewController.swift; sourceTree = "<group>"; };
 		F02354932CA6F0A3005F6E20 /* CalendarRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarRootViewController.swift; sourceTree = "<group>"; };
 		F02354952CA6F0B1005F6E20 /* SettingRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRootViewController.swift; sourceTree = "<group>"; };
 		F02354972CA6F0ED005F6E20 /* SettingRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRootView.swift; sourceTree = "<group>"; };
-		F02354992CA6F0FF005F6E20 /* OmoideRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmoideRootView.swift; sourceTree = "<group>"; };
-		F023549B2CA6F110005F6E20 /* ScheduleRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRootView.swift; sourceTree = "<group>"; };
 		F023549D2CA6F124005F6E20 /* CalendarRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarRootView.swift; sourceTree = "<group>"; };
-		F02354A32CA6F170005F6E20 /* SearchRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRootView.swift; sourceTree = "<group>"; };
+		F02354A32CA6F170005F6E20 /* OmoideRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmoideRootView.swift; sourceTree = "<group>"; };
 		F02354A52CA6F229005F6E20 /* SettingRootModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRootModel.swift; sourceTree = "<group>"; };
-		F02354A72CA6F23C005F6E20 /* OmoideRootModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmoideRootModel.swift; sourceTree = "<group>"; };
 		F02354A92CA6F250005F6E20 /* SchduleRootModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchduleRootModel.swift; sourceTree = "<group>"; };
 		F02354AB2CA6F25F005F6E20 /* CalendarRootModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarRootModel.swift; sourceTree = "<group>"; };
-		F02354AD2CA6F26C005F6E20 /* SearchRootModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRootModel.swift; sourceTree = "<group>"; };
 		F02354B72CA70862005F6E20 /* ColorAsset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAsset.xcassets; sourceTree = "<group>"; };
 		F02354B92CA709B8005F6E20 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		F02354BF2CA84232005F6E20 /* CustomMenus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMenus.swift; sourceTree = "<group>"; };
@@ -74,12 +76,24 @@
 		F02354C32CA8FB13005F6E20 /* UImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UImage.swift; sourceTree = "<group>"; };
 		F02354C52CA93840005F6E20 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		F02354C72CA93DB4005F6E20 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
-		F02354CB2CA9BBD1005F6E20 /* UserIconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIconCollectionViewCell.swift; sourceTree = "<group>"; };
-		F02354CD2CA9BD2E005F6E20 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		F0BEDA8C2CAAF66400C20D85 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIViewController.swift; path = calendar/UIKitExtentions/UIViewController.swift; sourceTree = SOURCE_ROOT; };
-		F0BEDA8F2CABC7EF00C20D85 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
-		F0BEDA912CAC341800C20D85 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
-		F0BEDA932CAC403700C20D85 /* TestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewCell.swift; sourceTree = "<group>"; };
+		F0BEDA9B2CAF135800C20D85 /* ScheduleRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRootView.swift; sourceTree = "<group>"; };
+		F0BEDA9F2CB02C6F00C20D85 /* CalenderUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderUseCase.swift; sourceTree = "<group>"; };
+		F0BEDAA12CB154BA00C20D85 /* ChangeDisplayFormatButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChangeDisplayFormatButtonsView.swift; path = calendar/Omoide/ChangeDisplayFormatButtonsView.swift; sourceTree = SOURCE_ROOT; };
+		F0BEDAA32CB1568E00C20D85 /* Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custom.swift; sourceTree = "<group>"; };
+		F0BEDAA72CB28A4B00C20D85 /* FriendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewCell.swift; sourceTree = "<group>"; };
+		F0BEDAAB2CB3993900C20D85 /* FriendsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCollectionView.swift; sourceTree = "<group>"; };
+		F0BEDAAF2CB3D01D00C20D85 /* albumCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = albumCollectionView.swift; sourceTree = "<group>"; };
+		F0BEDAB12CB3D03100C20D85 /* albumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = albumCollectionViewCell.swift; sourceTree = "<group>"; };
+		F0BEDAE12CB4D72500C20D85 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F0BEDAE32CB4D74000C20D85 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		F0BEDAE52CB4DD9800C20D85 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = calendar/UserModel.swift; sourceTree = SOURCE_ROOT; };
+		F0BEDAE72CB4DDA700C20D85 /* TestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestData.swift; path = calendar/TestData.swift; sourceTree = SOURCE_ROOT; };
+		F0BEDAE92CB4DDB600C20D85 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataStore.swift; path = calendar/DataStore.swift; sourceTree = SOURCE_ROOT; };
+		F0BEDB022CB520C500C20D85 /* UUID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUID.swift; sourceTree = "<group>"; };
+		F0BEDB042CB64DA500C20D85 /* AlbumCollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewModel.swift; sourceTree = "<group>"; };
+		F0BEDB052CB64DA500C20D85 /* AlbumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
+		F0BEDB062CB64DA500C20D85 /* FriendsCollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsCollectionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +129,11 @@
 				F02354702CA6CB78005F6E20 /* AppDelegate.swift */,
 				F02354722CA6CB78005F6E20 /* SceneDelegate.swift */,
 				F02354842CA6D38F005F6E20 /* MainTabBarController.swift */,
+				F0BEDAE12CB4D72500C20D85 /* LoginViewController.swift */,
+				F0BEDAE32CB4D74000C20D85 /* RegisterViewController.swift */,
+				F0BEDAE92CB4DDB600C20D85 /* DataStore.swift */,
+				F0BEDAE52CB4DD9800C20D85 /* UserModel.swift */,
+				F0BEDAE72CB4DDA700C20D85 /* TestData.swift */,
 				F023549F2CA6F12F005F6E20 /* Setting */,
 				F02354A02CA6F13E005F6E20 /* Omoide */,
 				F02354A12CA6F146005F6E20 /* Schedule */,
@@ -132,9 +151,6 @@
 		F023548C2CA6F041005F6E20 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				F02354A32CA6F170005F6E20 /* SearchRootView.swift */,
-				F023548A2CA6F034005F6E20 /* SearchRootViewController.swift */,
-				F02354AD2CA6F26C005F6E20 /* SearchRootModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -152,7 +168,11 @@
 		F02354A02CA6F13E005F6E20 /* Omoide */ = {
 			isa = PBXGroup;
 			children = (
-				F0BEDA8E2CABC4AB00C20D85 /* OmoideRoot */,
+				F0BEDAA12CB154BA00C20D85 /* ChangeDisplayFormatButtonsView.swift */,
+				F02354A32CA6F170005F6E20 /* OmoideRootView.swift */,
+				F023548A2CA6F034005F6E20 /* OmoideRootViewController.swift */,
+				F0BEDB072CB64DA500C20D85 /* Models */,
+				F0BEDAAD2CB3994100C20D85 /* FrinedsCollectionView */,
 			);
 			path = Omoide;
 			sourceTree = "<group>";
@@ -160,9 +180,10 @@
 		F02354A12CA6F146005F6E20 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
-				F023549B2CA6F110005F6E20 /* ScheduleRootView.swift */,
+				F0BEDA9B2CAF135800C20D85 /* ScheduleRootView.swift */,
 				F02354912CA6F096005F6E20 /* ScheduleRootViewController.swift */,
 				F02354A92CA6F250005F6E20 /* SchduleRootModel.swift */,
+				F0BEDA9F2CB02C6F00C20D85 /* CalenderUseCase.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -183,6 +204,7 @@
 				F0BEDA8C2CAAF66400C20D85 /* UIViewController.swift */,
 				F02354C72CA93DB4005F6E20 /* UILabel.swift */,
 				F02354C32CA8FB13005F6E20 /* UImage.swift */,
+				F0BEDB022CB520C500C20D85 /* UUID.swift */,
 			);
 			path = UIKitExtentions;
 			sourceTree = "<group>";
@@ -211,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				F02354BF2CA84232005F6E20 /* CustomMenus.swift */,
+				F0BEDAA32CB1568E00C20D85 /* Custom.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -224,19 +247,25 @@
 			path = Colors;
 			sourceTree = "<group>";
 		};
-		F0BEDA8E2CABC4AB00C20D85 /* OmoideRoot */ = {
+		F0BEDAAD2CB3994100C20D85 /* FrinedsCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				F02354992CA6F0FF005F6E20 /* OmoideRootView.swift */,
-				F023548F2CA6F07B005F6E20 /* OmoideRootViewController.swift */,
-				F0BEDA932CAC403700C20D85 /* TestCollectionViewCell.swift */,
-				F02354A72CA6F23C005F6E20 /* OmoideRootModel.swift */,
-				F02354CB2CA9BBD1005F6E20 /* UserIconCollectionViewCell.swift */,
-				F02354CD2CA9BD2E005F6E20 /* UserModel.swift */,
-				F0BEDA8F2CABC7EF00C20D85 /* AlbumCollectionViewCell.swift */,
-				F0BEDA912CAC341800C20D85 /* AlbumModel.swift */,
+				F0BEDAAB2CB3993900C20D85 /* FriendsCollectionView.swift */,
+				F0BEDAA72CB28A4B00C20D85 /* FriendCollectionViewCell.swift */,
+				F0BEDAAF2CB3D01D00C20D85 /* albumCollectionView.swift */,
+				F0BEDAB12CB3D03100C20D85 /* albumCollectionViewCell.swift */,
 			);
-			path = OmoideRoot;
+			path = FrinedsCollectionView;
+			sourceTree = "<group>";
+		};
+		F0BEDB072CB64DA500C20D85 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F0BEDB042CB64DA500C20D85 /* AlbumCollectionViewModel.swift */,
+				F0BEDB052CB64DA500C20D85 /* AlbumModel.swift */,
+				F0BEDB062CB64DA500C20D85 /* FriendsCollectionViewModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,36 +340,43 @@
 			buildActionMask = 2147483647;
 			files = (
 				F02354A62CA6F229005F6E20 /* SettingRootModel.swift in Sources */,
-				F0BEDA922CAC341800C20D85 /* AlbumModel.swift in Sources */,
-				F02354A42CA6F170005F6E20 /* SearchRootView.swift in Sources */,
+				F0BEDAA42CB1568E00C20D85 /* Custom.swift in Sources */,
+				F02354A42CA6F170005F6E20 /* OmoideRootView.swift in Sources */,
+				F0BEDA9C2CAF135800C20D85 /* ScheduleRootView.swift in Sources */,
 				F02354C62CA93840005F6E20 /* CustomFont.swift in Sources */,
 				F02354C82CA93DB4005F6E20 /* UILabel.swift in Sources */,
-				F02354A82CA6F23C005F6E20 /* OmoideRootModel.swift in Sources */,
+				F0BEDAE62CB4DD9800C20D85 /* UserModel.swift in Sources */,
 				F02354962CA6F0B1005F6E20 /* SettingRootViewController.swift in Sources */,
 				F02354982CA6F0ED005F6E20 /* SettingRootView.swift in Sources */,
 				F02354942CA6F0A3005F6E20 /* CalendarRootViewController.swift in Sources */,
 				F02354712CA6CB78005F6E20 /* AppDelegate.swift in Sources */,
 				F02354BA2CA709B8005F6E20 /* CustomColor.swift in Sources */,
+				F0BEDAEA2CB4DDB600C20D85 /* DataStore.swift in Sources */,
+				F0BEDAE82CB4DDA700C20D85 /* TestData.swift in Sources */,
+				F0BEDB0A2CB64DA500C20D85 /* FriendsCollectionViewModel.swift in Sources */,
 				F02354922CA6F096005F6E20 /* ScheduleRootViewController.swift in Sources */,
-				F0BEDA902CABC7EF00C20D85 /* AlbumCollectionViewCell.swift in Sources */,
+				F0BEDAA02CB02C6F00C20D85 /* CalenderUseCase.swift in Sources */,
+				F0BEDAA22CB154BA00C20D85 /* ChangeDisplayFormatButtonsView.swift in Sources */,
+				F0BEDAA82CB28A4B00C20D85 /* FriendCollectionViewCell.swift in Sources */,
+				F0BEDB082CB64DA500C20D85 /* AlbumCollectionViewModel.swift in Sources */,
 				F02354C42CA8FB13005F6E20 /* UImage.swift in Sources */,
 				F02354892CA6D7D5005F6E20 /* CustomImage.swift in Sources */,
 				F02354AC2CA6F25F005F6E20 /* CalendarRootModel.swift in Sources */,
+				F0BEDB092CB64DA500C20D85 /* AlbumModel.swift in Sources */,
 				F02354C02CA84232005F6E20 /* CustomMenus.swift in Sources */,
-				F023548B2CA6F034005F6E20 /* SearchRootViewController.swift in Sources */,
-				F02354AE2CA6F26C005F6E20 /* SearchRootModel.swift in Sources */,
-				F023549A2CA6F0FF005F6E20 /* OmoideRootView.swift in Sources */,
+				F023548B2CA6F034005F6E20 /* OmoideRootViewController.swift in Sources */,
+				F0BEDAAC2CB3993900C20D85 /* FriendsCollectionView.swift in Sources */,
 				F02354732CA6CB78005F6E20 /* SceneDelegate.swift in Sources */,
-				F023549C2CA6F110005F6E20 /* ScheduleRootView.swift in Sources */,
 				F02354AA2CA6F250005F6E20 /* SchduleRootModel.swift in Sources */,
 				F023549E2CA6F124005F6E20 /* CalendarRootView.swift in Sources */,
-				F02354CC2CA9BBD1005F6E20 /* UserIconCollectionViewCell.swift in Sources */,
+				F0BEDAE42CB4D74000C20D85 /* RegisterViewController.swift in Sources */,
 				F02354C22CA864D3005F6E20 /* CustomSize.swift in Sources */,
+				F0BEDAE22CB4D72500C20D85 /* LoginViewController.swift in Sources */,
+				F0BEDB032CB520C500C20D85 /* UUID.swift in Sources */,
 				F0BEDA8D2CAAF66400C20D85 /* UIViewController.swift in Sources */,
-				F0BEDA942CAC403700C20D85 /* TestCollectionViewCell.swift in Sources */,
+				F0BEDAB22CB3D03100C20D85 /* albumCollectionViewCell.swift in Sources */,
 				F02354852CA6D38F005F6E20 /* MainTabBarController.swift in Sources */,
-				F02354CE2CA9BD2E005F6E20 /* UserModel.swift in Sources */,
-				F02354902CA6F07B005F6E20 /* OmoideRootViewController.swift in Sources */,
+				F0BEDAB02CB3D01D00C20D85 /* albumCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

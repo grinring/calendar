@@ -1,14 +1,6 @@
-
+import Foundation
 import UIKit
 
-class SettingRootView: UIView {
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
+class SettingRootView:UIView{
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-
 }
