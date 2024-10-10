@@ -7,7 +7,15 @@
 
 import UIKit
 
+protocol FriendsCollectionViewDelegate:AnyObject{
+    func didSelectedCell(userID:UUID)
+    func showAllAlbums()
+}
+
 class FriendsCollectionView: UIView {
+    
+    weak var delegate:FriendsCollectionViewDelegate?
+    var collectionViewShowCount:Int = DataStore.shared.getAllFriends().count + 2
     
     //MARK: - components
     private lazy var collectionView:UICollectionView = {
@@ -41,6 +49,7 @@ class FriendsCollectionView: UIView {
         collectionView.register(FriendCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.dataSource = self
         collectionView.delegate = self
+        
         setupComponents()
         let initialIndexPath = IndexPath(row: 0, section: 0)
         collectionView.selectItem(at: initialIndexPath, animated: false, scrollPosition: .top)
@@ -58,9 +67,9 @@ class FriendsCollectionView: UIView {
 
 //MARK: - collection view data source
 extension FriendsCollectionView:UICollectionViewDelegate,UICollectionViewDataSource{
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return DataStore.shared.getAllUsers().count + 2
+        return collectionViewShowCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -73,7 +82,7 @@ extension FriendsCollectionView:UICollectionViewDelegate,UICollectionViewDataSou
                 cell.configure(data: FriendCollectionViewDefaultModel(text: "知り合い追加", image: IMG.addFriend))
             } 
             else {
-                let userList = DataStore.shared.getAllUsers()
+                let userList = DataStore.shared.getAllFriends()
                 let userData = userList[indexPath.row - 2]
                 cell.configure(data: FriendsCollectionViewModel(firstName: userData.firstName,
                                                                 lastName: userData.lastName,
@@ -89,6 +98,19 @@ extension FriendsCollectionView:UICollectionViewDelegate,UICollectionViewDataSou
         if let cell = collectionView.cellForItem(at: indexPath) as? FriendCollectionViewCell {
             cell.isSelected = true
             print("Selected: \(indexPath)")
+            
+            if indexPath.row == 0{
+                print("tap0")
+                delegate?.showAllAlbums()
+            } else if indexPath.row == 1{
+                //友達追加の画面遷移処理
+            } else {
+                print("tap2~")
+                let friendsList = DataStore.shared.getAllFriends()
+                let selectedFriendData = friendsList[indexPath.row - 2]
+                let selectedFriendID = selectedFriendData.id
+                delegate?.didSelectedCell(userID: selectedFriendID)
+            }
         }
     }
 

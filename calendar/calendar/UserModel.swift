@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct UserModel:Identifiable{
+class UserModel:Identifiable{
     
     var id:UUID
     var firstName:String

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TestData{
+class TestData{
     
     static let testFriendsData: [UserModel] = [
         UserModel(firstName: "鈴木", lastName: "太郎", userIcon: IMG.aFriend),
@@ -32,48 +32,17 @@ struct TestData{
         UserModel(firstName: "石川", lastName: "涼子", userIcon: IMG.aFriend)
     ]
     
-    var testFriendsDataID:[UUID] = []
-    static var testAlbumData:[AlbumModel] = []
-    
-    mutating func createAlbumData(){
-        for testFriendData in TestData.testFriendsData{
-            testFriendsDataID.append(testFriendData.id)
-        }
-        for testFriendData in TestData.testFriendsData{
-            let IDselecter = Int.random(in: 0..<testFriendsDataID.count)
-            let postUserID = testFriendsDataID[IDselecter]
-            let titleSelecter = Int.random(in: 0..<albums.count)
-            TestData.testAlbumData.append(AlbumModel(id: postUserID,
-                                                     title: albums[titleSelecter]["title"] ?? "旅行の思い出",
-                                                     description: albums[titleSelecter]["description"] ?? "このアルバムには、特別な瞬間が詰まっています。",
-                                                     location: albums[titleSelecter]["location"] ?? "奈良公園",
-                                                     photos: createPhotoModel(postUsersID: postUserID),
-                                                     //テストデータのみホストユーザのみの表示
-                                                     publicationRange: DataStore.shared.hostUserDataID))
-        }
-    }
-
-    
-    func createPhotoModel(postUsersID:UUID)->[PhotoModel]{
-        var photoDatas:[PhotoModel] = []
-        for i in 0...20{
-            photoDatas.append(PhotoModel(id: postUsersID,
-                                         image: IMG.defaultAlbumImage))
-        }
-        return photoDatas
-    }
-    
-    let albums: [[String: String]] = [
-        ["title": "スポーツイベント", "description": "美しい景色を楽しんだ一日を振り返ります。", "location": "四天王寺"],
-        ["title": "冬の楽しみ", "description": "特別な場所で心温まる瞬間を過ごしました。", "location": "仙台"],
-        ["title": "新しい発見", "description": "特別な日を忘れないように記録しました。", "location": "道頓堀"],
-        ["title": "夏の海", "description": "楽しいゲームを通じて絆を深めました。", "location": "熱海"],
-        ["title": "秋の紅葉", "description": "このアルバムには、特別な瞬間が詰まっています。", "location": "アクアワールド"],
-        ["title": "思い出の場所", "description": "楽しい瞬間を記録したアルバムです。", "location": "東京ディズニーランド"],
-        ["title": "サプライズイベント", "description": "この瞬間が永遠に続くことを願います。", "location": "横浜ランドマークタワー"],
-        ["title": "家族の思い出", "description": "新しい仲間たちとの素晴らしい瞬間を集めました。", "location": "グランフロント大阪"],
-        ["title": "アートと文化", "description": "新しい場所での冒険を記録したいと思います。", "location": "青山"],
-        ["title": "思い出のアルバム", "description": "心に残る体験をまとめたアルバムです。", "location": "福井"],
+    static let albums: [[Int: String]] = [
+        [0: "スポーツイベント", 1: "美しい景色を楽しんだ一日を振り返ります。", 2: "四天王寺"],
+        [0: "冬の楽しみ", 1: "特別な場所で心温まる瞬間を過ごしました。", 2: "仙台"],
+        [0: "新しい発見", 1: "特別な日を忘れないように記録しました。", 2: "道頓堀"],
+        [0: "夏の海", 1: "楽しいゲームを通じて絆を深めました。", 2: "熱海"],
+        [0: "秋の紅葉", 1: "このアルバムには、特別な瞬間が詰まっています。", 2: "アクアワールド"],
+        [0: "思い出の場所", 1: "楽しい瞬間を記録したアルバムです。", 2: "東京ディズニーランド"],
+        [0: "サプライズイベント", 1: "この瞬間が永遠に続くことを願います。", 2: "横浜ランドマークタワー"],
+        [0: "家族の思い出", 1: "新しい仲間たちとの素晴らしい瞬間を集めました。", 2: "グランフロント大阪"],
+        [0: "アートと文化", 1: "新しい場所での冒険を記録したいと思います。", 2: "青山"],
+        [0: "思い出のアルバム", 1: "心に残る体験をまとめたアルバムです。", 2: "福井"],
     ]
 
     

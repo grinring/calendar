@@ -7,7 +7,7 @@
 
 import UIKit
 
-class albumCollectionViewCell: UICollectionViewCell {
+class AlbumCollectionViewCell: UICollectionViewCell {
     
     
     //MARK: - components
@@ -84,18 +84,33 @@ class albumCollectionViewCell: UICollectionViewCell {
     }
     
     
-    func configure(){
-        
+    func configure(image:UIImage,title:String,description:String?,location:String,userIcon:UIImage){
+        albumImageView.image = image
+        albumTitle.text = title
+        albumDescription.text = description
+        self.location.text = location
+        self.userIcon.image = userIcon
     }
     
     //MARK: - init
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupComponent()
+        setupLayout()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        albumImageView.image = nil
+        albumTitle.text = nil
+        albumDescription.text = nil
+        location.text = nil
+        userIcon.image = nil
     }
     
     required init?(coder: NSCoder) {

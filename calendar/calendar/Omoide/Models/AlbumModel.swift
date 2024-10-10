@@ -13,11 +13,8 @@ struct AlbumModel:Identifiable{
     var title:String
     var description:String
     var location:String
-    var photos:[PhotoModel]
+    var photos:[UIImage]
     var publicationRange:UUID
 }
 
-struct PhotoModel{
-    var id:UUID
-    var image:UIImage
-}
+

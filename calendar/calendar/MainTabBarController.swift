@@ -24,7 +24,7 @@ extension MainTabBarController {
     }
     
     func setupViewControllers() {
-        let searchNavController = createNavController(for: OmoideRootViewController(),
+        let searchNavController = createNavController(for: SearchRootViewController(),
                                                       title: "探す",
                                                       image: CustomImage.tab00,
                                                       tag: 0)

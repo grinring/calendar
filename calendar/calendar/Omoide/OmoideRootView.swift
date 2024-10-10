@@ -5,6 +5,7 @@ class OmoideRootView: UIView {
     
     private(set) lazy var changeDisplayFormatButtonsView = ChangeDisplayFormatButtonsView()
     private(set) lazy var friendsCollectionView = FriendsCollectionView()
+    private(set) lazy var albumCollectionView = AlbumCollectionView()
     
     //MARK: - components
     lazy var scrollView:UIScrollView = {
@@ -27,6 +28,8 @@ class OmoideRootView: UIView {
         scrollView.addSubview(contentsView)
         contentsView.addSubview(changeDisplayFormatButtonsView)
         contentsView.addSubview(friendsCollectionView)
+        contentsView.addSubview(albumCollectionView)
+        friendsCollectionView.delegate = albumCollectionView
     }
     
     func setupLayout(){
@@ -52,7 +55,11 @@ class OmoideRootView: UIView {
             friendsCollectionView.topAnchor.constraint(equalTo: changeDisplayFormatButtonsView.bottomAnchor,constant: Size.contensMargin),
             friendsCollectionView.leadingAnchor.constraint(equalTo: contentsView.leadingAnchor),
             friendsCollectionView.trailingAnchor.constraint(equalTo: contentsView.trailingAnchor, constant: Size.viewMargin),
-            friendsCollectionView.heightAnchor.constraint(equalTo:contentsView.heightAnchor, multiplier: 0.1)
+            friendsCollectionView.heightAnchor.constraint(equalTo:contentsView.heightAnchor, multiplier: 0.1),
+            albumCollectionView.topAnchor.constraint(equalTo: friendsCollectionView.bottomAnchor, constant: Size.contensMargin),
+            albumCollectionView.leadingAnchor.constraint(equalTo: contentsView.leadingAnchor),
+            albumCollectionView.trailingAnchor.constraint(equalTo: contentsView.trailingAnchor),
+            albumCollectionView.bottomAnchor.constraint(equalTo: contentsView.bottomAnchor)
             
             //add components...
         ])
