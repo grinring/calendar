@@ -16,11 +16,15 @@ class AlbumCollectionView: UIView,FriendsCollectionViewDelegate {
     private lazy var albumCollectionView:UICollectionView = {
         let config = UICollectionViewFlowLayout()
         config.scrollDirection = .vertical
-        config.minimumInteritemSpacing = Size.itemMargin
-        config.minimumLineSpacing = Size.itemMargin
-        config.estimatedItemSize = CGSize(width: 180, height: 200)
+        config.minimumLineSpacing = 10
+        config.minimumInteritemSpacing = 10
+        // initではframeサイズを使えないのでスクリーンサイズを使用する。
+        let width = UIScreen.main.bounds.width * 0.4
+        let height = width * 1.1
+        config.itemSize = CGSize(width: width, height: height)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: config)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .clear
         return collectionView
     }()
     
@@ -111,23 +115,16 @@ extension AlbumCollectionView:UICollectionViewDataSource,UICollectionViewDelegat
             var albumIcon:UIImage {
                 for friend in friendsData{
                     if album.id == friend.id{
-                        //
-                        print(friend.userIcon)
-                        //
                         return friend.userIcon
-                        
-                        //return 指定いいのか　このコード群の意味
                     }
                 }
                 return IMG.aFriend
             }
             cell.configure(image: albumImage!,
                            title: album.title, description: album.description, location: album.location, userIcon:albumIcon)
-            print("done")
             return cell
         } else {
             //エラーハンドリングする
-            print("error")
             return UICollectionViewCell()
         }
     }

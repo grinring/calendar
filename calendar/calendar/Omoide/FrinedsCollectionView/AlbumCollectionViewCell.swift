@@ -79,8 +79,13 @@ class AlbumCollectionViewCell: UICollectionViewCell {
             albumImageView.widthAnchor.constraint(equalTo:albumImageView.heightAnchor, multiplier: 1.618),
             userIcon.heightAnchor.constraint(equalToConstant: 24),
             userIcon.widthAnchor.constraint(equalTo:userIcon.heightAnchor),
-            albumCaptions.heightAnchor.constraint(equalTo: userIcon.heightAnchor)
+            albumCaptions.heightAnchor.constraint(equalTo: userIcon.heightAnchor),
+            stackView.topAnchor.constraint(equalTo: self.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
+        
     }
     
     

@@ -49,6 +49,7 @@
 		F0BEDB092CB64DA500C20D85 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDB052CB64DA500C20D85 /* AlbumModel.swift */; };
 		F0BEDB0A2CB64DA500C20D85 /* FriendsCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDB062CB64DA500C20D85 /* FriendsCollectionViewModel.swift */; };
 		F0BEDB0C2CB7D9DF00C20D85 /* SearchRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDB0B2CB7D9DF00C20D85 /* SearchRootViewController.swift */; };
+		F0BEDB0E2CB7F91E00C20D85 /* AlbumCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDB0D2CB7F91E00C20D85 /* AlbumCollectionViewLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		F0BEDB052CB64DA500C20D85 /* AlbumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
 		F0BEDB062CB64DA500C20D85 /* FriendsCollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsCollectionViewModel.swift; sourceTree = "<group>"; };
 		F0BEDB0B2CB7D9DF00C20D85 /* SearchRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRootViewController.swift; sourceTree = "<group>"; };
+		F0BEDB0D2CB7F91E00C20D85 /* AlbumCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +259,7 @@
 				F0BEDAA72CB28A4B00C20D85 /* FriendCollectionViewCell.swift */,
 				F0BEDAAF2CB3D01D00C20D85 /* AlbumCollectionView.swift */,
 				F0BEDAB12CB3D03100C20D85 /* AlbumCollectionViewCell.swift */,
+				F0BEDB0D2CB7F91E00C20D85 /* AlbumCollectionViewLayout.swift */,
 			);
 			path = FrinedsCollectionView;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				F02354C62CA93840005F6E20 /* CustomFont.swift in Sources */,
 				F02354C82CA93DB4005F6E20 /* UILabel.swift in Sources */,
 				F0BEDAE62CB4DD9800C20D85 /* UserModel.swift in Sources */,
+				F0BEDB0E2CB7F91E00C20D85 /* AlbumCollectionViewLayout.swift in Sources */,
 				F02354962CA6F0B1005F6E20 /* SettingRootViewController.swift in Sources */,
 				F02354982CA6F0ED005F6E20 /* SettingRootView.swift in Sources */,
 				F02354942CA6F0A3005F6E20 /* CalendarRootViewController.swift in Sources */,
