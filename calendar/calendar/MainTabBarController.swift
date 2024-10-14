@@ -61,7 +61,7 @@ extension MainTabBarController {
     func configureTabBar() {
         tabBar.tintColor = Col.accent
         tabBar.unselectedItemTintColor = UIColor.systemGray
-        tabBar.backgroundColor = Col.defaultBackground
+        tabBar.backgroundColor = Col.CustomBG
         
         tabBar.layer.borderWidth = 0.5
         tabBar.layer.borderColor = UIColor.systemGray.cgColor

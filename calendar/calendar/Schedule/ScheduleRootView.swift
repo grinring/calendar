@@ -32,10 +32,10 @@ class ScheduleRootView: UIView {
         config.background.backgroundColor = bgColor
         config.attributedTitle = AttributedString(title, attributes: AttributeContainer([
             NSAttributedString.Key.font:F.body,
-            NSAttributedString.Key.foregroundColor:Col.defaultCharacter
+            NSAttributedString.Key.foregroundColor:Col.customChar
         ]))
         if let icon = icon {
-            let iconConfig = UIImage.SymbolConfiguration(paletteColors: [.systemTeal,Col.defaultCharacter])
+            let iconConfig = UIImage.SymbolConfiguration(paletteColors: [.systemTeal,Col.customChar])
             config.image = icon.withConfiguration(iconConfig)
             config.imagePadding = Size.itemMargin
         }
@@ -67,7 +67,7 @@ class ScheduleRootView: UIView {
     }()
     
     private lazy var addScheduleButton:UIButton = {
-        let button = createButton(title: "予定を追加", icon: IMG.iconAddSchedule, bgColor: Col.defaultBackground)
+        let button = createButton(title: "予定を追加", icon: IMG.iconAddSchedule, bgColor: Col.CustomBG)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()

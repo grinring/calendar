@@ -58,7 +58,8 @@ class OmoideRootView: UIView {
             friendsCollectionView.heightAnchor.constraint(equalTo:contentsView.heightAnchor, multiplier: 0.1),
             albumCollectionView.topAnchor.constraint(equalTo: friendsCollectionView.bottomAnchor, constant: Size.contensMargin),
             albumCollectionView.leadingAnchor.constraint(equalTo: contentsView.leadingAnchor),
-            albumCollectionView.trailingAnchor.constraint(equalTo: contentsView.trailingAnchor)
+            albumCollectionView.trailingAnchor.constraint(equalTo: contentsView.trailingAnchor),
+            albumCollectionView.bottomAnchor.constraint(equalTo: contentsView.bottomAnchor)
         ])
         
     }

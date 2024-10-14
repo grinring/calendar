@@ -8,22 +8,44 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    
+    private(set) lazy var loginView = LoginView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.view.addSubview(loginView)
+        loginView.emailTextField.delegate = self
+        loginView.passwordTextField.delegate = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        loginView.frame = view.bounds.inset(by: view.safeAreaInsets)
     }
-    */
+    
+    @objc static func loginButtonPressed(){
+        
+    }
+    
+    @objc static func eyeButtonPressed(){
+        
+    }
 
+
+}
+
+extension LoginViewController:UITextFieldDelegate{
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if (textField.text?.isEmpty == true || textField.text?.trimmingCharacters(in: .whitespaces).isEmpty == true) {
+            return false
+        }
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if (textField.text?.isEmpty == true || textField.text?.trimmingCharacters(in: .whitespaces).isEmpty == true) {
+            return false
+        }
+        return true
+    }
 }
