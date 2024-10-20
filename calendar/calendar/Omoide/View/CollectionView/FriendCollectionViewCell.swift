@@ -88,6 +88,11 @@ class FriendCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         setupComponents()
         setupLayout()
+        
+        layoutIfNeeded()
+        userImageView.layer.cornerRadius = userImageView.bounds.height/2
+        userImageView.layer.masksToBounds = true
+        
     }
     
     override func layoutSubviews() {

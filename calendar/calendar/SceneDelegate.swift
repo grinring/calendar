@@ -10,6 +10,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = MainTabBarController()
         window?.makeKeyAndVisible()
+        print(DataStore.shared.getAllFriends())
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -3,8 +3,11 @@ import UIKit
 
 class OmoideRootView: UIView {
     
-    private(set) lazy var changeDisplayFormatButtonsView = ChangeDisplayFormatButtonsView()
-    private(set) lazy var friendsCollectionView = FriendsCollectionView()
+    var friendDatas:[UserModel]
+    private lazy var changeDisplayFormatButtonsView = ChangeDisplayFormatButtonsView()
+    private lazy var friendsCollectionView = FriendsCollectionView(frame: .zero,
+                                                                        dataSource: friendDatas,
+                                                                        cellPattern: .Root)
     private(set) lazy var albumCollectionView = AlbumCollectionView()
     
     //MARK: - components
@@ -70,9 +73,14 @@ class OmoideRootView: UIView {
 
     //MARK: - init
     
-    override init(frame: CGRect) {
+    init(frame: CGRect,friendCollectionViewData:[UserModel]) {
+        friendDatas = friendCollectionViewData
         super.init(frame: frame)
         setupComponents()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func layoutSubviews() {
@@ -80,8 +88,5 @@ class OmoideRootView: UIView {
         setupLayout()
     }
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
 
 }

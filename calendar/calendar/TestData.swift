@@ -16,33 +16,30 @@ class TestData{
     var testPageDatas:[PageModel]!
     var testPageImageDatas:[ImageModel]!
     
-    static let friend1 = UserModel(firstName: "追加", lastName: "太郎", userIcon: IMG.aFriend)
-    static let friend2 = UserModel(firstName: "追加", lastName: "太郎", userIcon: IMG.aFriend)
-    
     init(){
-        hostUser = UserModel(firstName: "辻", lastName: "倫太郎", userIcon: IMG.aFriend)
+        hostUser = UserModel(firstName: "辻", lastName: "倫太郎", userIcon: IMG.aFriendOfCollectionView)
         
         testFriendsUsers = [
-            UserModel(firstName: "鈴木", lastName: "太郎", userIcon: IMG.aFriend),
-            UserModel(firstName: "田中", lastName: "花子", userIcon: IMG.aFriend),
-            UserModel(firstName: "佐藤", lastName: "次郎", userIcon: IMG.aFriend),
-            UserModel(firstName: "高橋", lastName: "一郎", userIcon: IMG.aFriend),
-            UserModel(firstName: "渡辺", lastName: "美咲", userIcon: IMG.aFriend),
-            UserModel(firstName: "伊藤", lastName: "健太", userIcon: IMG.aFriend),
-            UserModel(firstName: "山本", lastName: "彩花", userIcon: IMG.aFriend),
-            UserModel(firstName: "中村", lastName: "大輔", userIcon: IMG.aFriend),
-            UserModel(firstName: "小林", lastName: "恵理", userIcon: IMG.aFriend),
-            UserModel(firstName: "加藤", lastName: "翔太", userIcon: IMG.aFriend),
-            UserModel(firstName: "吉田", lastName: "直美", userIcon: IMG.aFriend),
-            UserModel(firstName: "山田", lastName: "雄大", userIcon: IMG.aFriend),
-            UserModel(firstName: "石井", lastName: "紗季", userIcon: IMG.aFriend),
-            UserModel(firstName: "森田", lastName: "晴香", userIcon: IMG.aFriend),
-            UserModel(firstName: "岡田", lastName: "真也", userIcon: IMG.aFriend),
-            UserModel(firstName: "清水", lastName: "理恵", userIcon: IMG.aFriend),
-            UserModel(firstName: "松本", lastName: "佳代", userIcon: IMG.aFriend),
-            UserModel(firstName: "長谷川", lastName: "一美", userIcon: IMG.aFriend),
-            UserModel(firstName: "藤田", lastName: "大和", userIcon: IMG.aFriend),
-            UserModel(firstName: "黒田", lastName: "恭子", userIcon: IMG.aFriend)
+            UserModel(firstName: "鈴木", lastName: "太郎", userIcon: IMG.aFriendOfCollectionView),
+            UserModel(firstName: "田中", lastName: "花子", userIcon: IMG.aFriendOfCollectionView),
+            UserModel(firstName: "佐藤", lastName: "次郎", userIcon: IMG.aFriendOfCollectionView),
+            UserModel(firstName: "高橋", lastName: "一郎", userIcon: IMG.aFriendOfCollectionView),
+            UserModel(firstName: "渡辺", lastName: "美咲", userIcon: IMG.aFriendOfCollectionView),
+            UserModel(firstName: "伊藤", lastName: "健太", userIcon: IMG.aFriendOfCollectionView),
+            UserModel(firstName: "山本", lastName: "彩花", userIcon: IMG.aFriendOfCollectionView),
+            UserModel(firstName: "中村", lastName: "大輔", userIcon: IMG.aFriendOfCollectionView),
+            UserModel(firstName: "小林", lastName: "恵理", userIcon: IMG.aFriendOfCollectionView),
+            UserModel(firstName: "加藤", lastName: "翔太", userIcon: IMG.aFriendOfCollectionView),
+            UserModel(firstName: "吉田", lastName: "直美", userIcon: IMG.aFriendOfCollectionView),
+            UserModel(firstName: "山田", lastName: "雄大", userIcon: IMG.aFriendOfCollectionView),
+            UserModel(firstName: "石井", lastName: "紗季", userIcon: IMG.aFriendOfCollectionView),
+            UserModel(firstName: "森田", lastName: "晴香", userIcon: IMG.aFriendOfCollectionView),
+            UserModel(firstName: "岡田", lastName: "真也", userIcon: IMG.aFriendOfCollectionView),
+            UserModel(firstName: "清水", lastName: "理恵", userIcon: IMG.aFriendOfCollectionView),
+            UserModel(firstName: "松本", lastName: "佳代", userIcon: IMG.aFriendOfCollectionView),
+            UserModel(firstName: "長谷川", lastName: "一美", userIcon: IMG.aFriendOfCollectionView),
+            UserModel(firstName: "藤田", lastName: "大和", userIcon: IMG.aFriendOfCollectionView),
+            UserModel(firstName: "黒田", lastName: "恭子", userIcon: IMG.aFriendOfCollectionView)
         ]
         
         testAlbumDatas = [
@@ -87,50 +84,103 @@ class TestData{
             AlbumModel(postUserID: testFriendsUsers[19].id, title: "特別な日を祝った素晴らしい瞬間", thumbnailImage: IMG.defaultAlbumImage,location: "宮崎県宮崎市橘通39-39-39"),
             AlbumModel(postUserID: testFriendsUsers[10].id, title: "思い出のバカンスを楽しんだ日々", thumbnailImage: IMG.defaultAlbumImage, location: "沖縄県宮古島市中央40-40-40")
         ]
+        
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+
+        let dates: [Date] = [
+            dateFormatter.date(from: "2023-10-31")!,
+            dateFormatter.date(from: "2023-10-31")!,
+            dateFormatter.date(from: "2023-11-01")!,
+            dateFormatter.date(from: "2023-11-02")!
+        ]
 
         
         testPageDatas = [
-            PageModel(title: "誕生日パーティー", albumID: testAlbumDatas[0].id, description: "友達の誕生日を祝う楽しい日", date: Date(), location: "東京都港区南青山1-1-1"),
-            PageModel(title: "家族旅行", albumID: testAlbumDatas[1].id, description: "家族での特別な旅行の思い出", date: Date(), location: "東京都八王子市北野町2-2-2"),
-            PageModel(title: "キャンプの思い出", albumID: testAlbumDatas[2].id, description: "友人と過ごしたキャンプの夜", date: Date(), location: "千葉県君津市深見2631"),
-            PageModel(title: "夏祭り", albumID: testAlbumDatas[3].id, description: "地元の夏祭りに参加した楽しい日", date: Date(), location: "大阪府大阪市北区梅田3-3-3"),
-            PageModel(title: "クリスマス", albumID: testAlbumDatas[4].id, description: "家族で過ごした特別なクリスマス", date: Date(), location: "神奈川県横浜市中区元町1-1-1"),
-            PageModel(title: "映画鑑賞", albumID: testAlbumDatas[5].id, description: "友達と見た感動的な映画", date: Date(), location: "東京都新宿区歌舞伎町2-2-2"),
-            PageModel(title: "ハイキング", albumID: testAlbumDatas[6].id, description: "自然の中でのリフレッシュ", date: Date(), location: "山梨県甲府市古府中町3-3-3"),
-            PageModel(title: "卒業式", albumID: testAlbumDatas[7].id, description: "感動の卒業式を迎えた日", date: Date(), location: "東京都文京区本郷3-3-3"),
-            PageModel(title: "新年会", albumID: testAlbumDatas[8].id, description: "新年を祝う楽しい会", date: Date(), location: "愛知県名古屋市中村区名駅南1-1-1"),
-            PageModel(title: "お花見", albumID: testAlbumDatas[9].id, description: "桜の下で過ごした素晴らしい日", date: Date(), location: "東京都台東区上野公園1-1-1"),
-            PageModel(title: "友人の結婚式", albumID: testAlbumDatas[10].id, description: "友人の幸せを祝った日", date: Date(), location: "東京都新宿区西新宿6-6-6"),
-            PageModel(title: "温泉旅行", albumID: testAlbumDatas[11].id, description: "温泉でリフレッシュした思い出", date: Date(), location: "群馬県草津町草津496"),
-            PageModel(title: "趣味の時間", albumID: testAlbumDatas[12].id, description: "趣味を楽しむための時間", date: Date(), location: "大阪府大阪市中央区心斎橋筋1-1-1"),
-            PageModel(title: "ピクニック", albumID: testAlbumDatas[13].id, description: "公園で過ごした楽しい時間", date: Date(), location: "兵庫県神戸市中央区元町通2-2-2"),
-            PageModel(title: "スポーツ観戦", albumID: testAlbumDatas[14].id, description: "好きなチームの試合を観戦した日", date: Date(), location: "東京都江東区有明1-1-1"),
-            PageModel(title: "アート展", albumID: testAlbumDatas[15].id, description: "美術館でアートを楽しむ", date: Date(), location: "東京都台東区谷中7-7-7"),
-            PageModel(title: "読書会", albumID: testAlbumDatas[16].id, description: "本を読んで語り合った日", date: Date(), location: "北海道札幌市中央区大通西1-1"),
-            PageModel(title: "料理教室", albumID: testAlbumDatas[17].id, description: "料理を学ぶ楽しい時間", date: Date(), location: "京都府京都市中京区河原町通三条下ル大黒町1-1"),
-            PageModel(title: "バーベキュー", albumID: testAlbumDatas[18].id, description: "屋外での楽しいバーベキュー", date: Date(), location: "東京都練馬区大泉学園町6-6-6"),
-            PageModel(title: "市民マラソン", albumID: testAlbumDatas[19].id, description: "マラソンに参加して完走した日", date: Date(), location: "埼玉県さいたま市大宮区桜木町1-1-1"),
-            PageModel(title: "音楽フェス", albumID: testAlbumDatas[20].id, description: "友達と参加した音楽フェス", date: Date(), location: "東京都渋谷区代々木神園町2-2-2"),
-            PageModel(title: "夏休みの思い出", albumID: testAlbumDatas[21].id, description: "思い出深い夏休みを過ごした日", date: Date(), location: "静岡県浜松市中区砂山町3-3-3"),
-            PageModel(title: "旅行の計画", albumID: testAlbumDatas[22].id, description: "次の旅行の計画を立てた日", date: Date(), location: "東京都豊島区池袋1-1-1"),
-            PageModel(title: "特別なイベント", albumID: testAlbumDatas[23].id, description: "家族で参加した特別なイベント", date: Date(), location: "福岡県福岡市博多区博多駅前3-3-3"),
-            PageModel(title: "DIYプロジェクト", albumID: testAlbumDatas[24].id, description: "自宅でのDIYを楽しんだ日", date: Date(), location: "神奈川県川崎市中原区新丸子町2-2-2"),
-            PageModel(title: "友人との集まり", albumID: testAlbumDatas[25].id, description: "友人たちとの楽しい集まり", date: Date(), location: "東京都江戸川区船堀3-3-3"),
-            PageModel(title: "映画鑑賞会", albumID: testAlbumDatas[26].id, description: "映画を見ながら過ごした日", date: Date(), location: "愛知県名古屋市千種区今池5-5-5"),
-            PageModel(title: "マルシェ訪問", albumID: testAlbumDatas[27].id, description: "地元のマルシェで楽しんだ日", date: Date(), location: "広島県広島市中区基町2-2-2"),
-            PageModel(title: "バレーボール大会", albumID: testAlbumDatas[28].id, description: "地域のバレーボール大会に参加", date: Date(), location: "神奈川県厚木市旭町1-1-1"),
-            PageModel(title: "サイクリング", albumID: testAlbumDatas[29].id, description: "友人とサイクリングを楽しんだ日", date: Date(), location: "東京都世田谷区三軒茶屋1-1-1"),
-            PageModel(title: "フィットネスチャレンジ", albumID: testAlbumDatas[30].id, description: "健康のためのフィットネスチャレンジ", date: Date(), location: "埼玉県川口市川口1-1-1"),
-            PageModel(title: "冬の雪遊び", albumID: testAlbumDatas[31].id, description: "雪の中で遊んだ楽しい日", date: Date(), location: "北海道札幌市北区北大通2-2-2"),
-            PageModel(title: "美術館巡り", albumID: testAlbumDatas[32].id, description: "アートを楽しむための美術館巡り", date: Date(), location: "愛知県名古屋市中村区名駅4-4-4"),
-            PageModel(title: "サプライズパーティー", albumID: testAlbumDatas[33].id, description: "友人のためのサプライズパーティー", date: Date(), location: "大阪府大阪市北区大淀南2-2-2"),
-            PageModel(title: "古着屋巡り", albumID: testAlbumDatas[34].id, description: "古着屋での掘り出し物探し", date: Date(), location: "東京都中野区中野5-5-5"),
-            PageModel(title: "仲間とのハイキング", albumID: testAlbumDatas[35].id, description: "仲間とハイキングを楽しむ", date: Date(), location: "長野県松本市安曇1-1-1"),
-            PageModel(title: "街歩き", albumID: testAlbumDatas[36].id, description: "新しい街を探索する日", date: Date(), location: "東京都新宿区新宿3-3-3"),
-            PageModel(title: "友達とのディナー", albumID: testAlbumDatas[37].id, description: "友達と楽しいディナーを過ごした日", date: Date(), location: "神奈川県横浜市港北区新横浜2-2-2"),
-            PageModel(title: "公園でのピクニック", albumID: testAlbumDatas[38].id, description: "公園で過ごした楽しいピクニック", date: Date(), location: "埼玉県さいたま市見沼区大字南中丸463"),
-            PageModel(title: "カラオケナイト", albumID: testAlbumDatas[39].id, description: "友人たちとカラオケを楽しんだ日", date: Date(), location: "東京都豊島区池袋2-2-2"),
+            PageModel(title: "誕生日パーティー", albumID: testAlbumDatas[0].id, description: "友達の誕生日を祝う楽しい日", date: dates[0], location: "東京都港区南青山1-1-1", friends: [testFriendsUsers[5].id, testFriendsUsers[9].id, testFriendsUsers[13].id, testFriendsUsers[17].id],publication:publicationPost.unPublicPost),
+            PageModel(title: "家族旅行", albumID: testAlbumDatas[0].id, description: "家族での特別な旅行の思い出", date: dates[1], location: "東京都八王子市北野町2-2-2", friends: [testFriendsUsers[2].id, testFriendsUsers[8].id, testFriendsUsers[14].id, testFriendsUsers[19].id],publication: publicationPost.publicPost),
+            PageModel(title: "キャンプの思い出", albumID: testAlbumDatas[0].id, description: "友人と過ごしたキャンプの夜", date: dates[2], location: "千葉県君津市深見2631", friends: [testFriendsUsers[1].id, testFriendsUsers[6].id, testFriendsUsers[12].id, testFriendsUsers[18].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "夏祭り", albumID: testAlbumDatas[0].id, description: "地元の夏祭りに参加した楽しい日", date: dates[3], location: "大阪府大阪市北区梅田3-3-3", friends: [testFriendsUsers[0].id, testFriendsUsers[7].id, testFriendsUsers[11].id, testFriendsUsers[16].id],publication: publicationPost.publicPost),
+            PageModel(title: "クリスマス", albumID: testAlbumDatas[4].id, description: "家族で過ごした特別なクリスマス", date: Date(), location: "神奈川県横浜市中区元町1-1-1", friends: [testFriendsUsers[3].id, testFriendsUsers[5].id, testFriendsUsers[10].id, testFriendsUsers[14].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "映画鑑賞", albumID: testAlbumDatas[5].id, description: "友達と見た感動的な映画", date: Date(), location: "東京都新宿区歌舞伎町2-2-2", friends: [testFriendsUsers[4].id, testFriendsUsers[8].id, testFriendsUsers[13].id, testFriendsUsers[17].id],publication: publicationPost.publicPost),
+            PageModel(title: "ハイキング", albumID: testAlbumDatas[6].id, description: "自然の中でのリフレッシュ", date: Date(), location: "山梨県甲府市古府中町3-3-3", friends: [testFriendsUsers[2].id, testFriendsUsers[6].id, testFriendsUsers[11].id, testFriendsUsers[19].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "卒業式", albumID: testAlbumDatas[7].id, description: "感動の卒業式を迎えた日", date: Date(), location: "東京都文京区本郷3-3-3", friends: [testFriendsUsers[0].id, testFriendsUsers[7].id, testFriendsUsers[12].id, testFriendsUsers[18].id],publication: publicationPost.publicPost),
+            PageModel(title: "新年会", albumID: testAlbumDatas[8].id, description: "新年を祝う楽しい会", date: Date(), location: "愛知県名古屋市中村区名駅南1-1-1", friends: [testFriendsUsers[1].id, testFriendsUsers[5].id, testFriendsUsers[10].id, testFriendsUsers[16].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "お花見", albumID: testAlbumDatas[9].id, description: "桜の下で過ごした素晴らしい日", date: Date(), location: "東京都台東区上野公園1-1-1", friends: [testFriendsUsers[4].id, testFriendsUsers[8].id, testFriendsUsers[13].id, testFriendsUsers[15].id],publication: publicationPost.publicPost),
+            PageModel(title: "友人の結婚式", albumID: testAlbumDatas[10].id, description: "友人の幸せを祝った日", date: Date(), location: "東京都新宿区西新宿6-6-6", friends: [testFriendsUsers[3].id, testFriendsUsers[6].id, testFriendsUsers[11].id, testFriendsUsers[14].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "温泉旅行", albumID: testAlbumDatas[11].id, description: "温泉でリフレッシュした思い出", date: Date(), location: "群馬県草津町草津496", friends: [testFriendsUsers[2].id, testFriendsUsers[9].id, testFriendsUsers[12].id, testFriendsUsers[19].id],publication: publicationPost.publicPost),
+            PageModel(title: "趣味の時間", albumID: testAlbumDatas[12].id, description: "趣味を楽しむための時間", date: Date(), location: "大阪府大阪市中央区心斎橋筋1-1-1", friends: [testFriendsUsers[1].id, testFriendsUsers[5].id, testFriendsUsers[10].id, testFriendsUsers[15].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "ピクニック", albumID: testAlbumDatas[13].id, description: "公園で過ごした楽しい時間", date: Date(), location: "兵庫県神戸市中央区元町通2-2-2", friends: [testFriendsUsers[4].id, testFriendsUsers[8].id, testFriendsUsers[13].id, testFriendsUsers[18].id],publication: publicationPost.publicPost),
+            PageModel(title: "スポーツ観戦", albumID: testAlbumDatas[14].id, description: "好きなチームの試合を観戦した日", date: Date(), location: "東京都江東区有明1-1-1", friends: [testFriendsUsers[0].id, testFriendsUsers[7].id, testFriendsUsers[11].id, testFriendsUsers[16].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "アート展", albumID: testAlbumDatas[15].id, description: "美術館でアートを楽しむ", date: Date(), location: "東京都台東区谷中7-7-7", friends: [testFriendsUsers[3].id, testFriendsUsers[6].id, testFriendsUsers[12].id, testFriendsUsers[17].id],publication: publicationPost.publicPost),
+            PageModel(title: "読書会", albumID: testAlbumDatas[16].id, description: "本を読んで語り合った日", date: Date(), location: "北海道札幌市中央区大通西1-1", friends: [testFriendsUsers[2].id, testFriendsUsers[9].id, testFriendsUsers[13].id, testFriendsUsers[15].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "料理教室", albumID: testAlbumDatas[17].id, description: "料理を学ぶ楽しい時間", date: Date(), location: "京都府京都市中京区河原町通三条下ル大黒町1-1", friends: [testFriendsUsers[1].id, testFriendsUsers[8].id, testFriendsUsers[10].id, testFriendsUsers[19].id],publication: publicationPost.publicPost),
+            PageModel(title: "バーベキュー", albumID: testAlbumDatas[18].id, description: "屋外での楽しいバーベキュー", date: Date(), location: "東京都練馬区大泉学園町6-6-6", friends: [testFriendsUsers[0].id, testFriendsUsers[7].id, testFriendsUsers[11].id, testFriendsUsers[18].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "市民マラソン", albumID: testAlbumDatas[19].id, description: "マラソンに参加して完走した日", date: Date(), location: "埼玉県さいたま市大宮区桜木町1-1-1", friends: [testFriendsUsers[3].id, testFriendsUsers[5].id, testFriendsUsers[14].id, testFriendsUsers[16].id],publication: publicationPost.publicPost),
+            PageModel(title: "音楽フェス", albumID: testAlbumDatas[20].id, description: "友達と参加した音楽フェス", date: Date(), location: "東京都渋谷区代々木神園町2-2-2", friends: [testFriendsUsers[4].id, testFriendsUsers[8].id, testFriendsUsers[12].id, testFriendsUsers[17].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "夏休みの冒険", albumID: testAlbumDatas[21].id, description: "友達と過ごした夏休みの冒険", date: Date(), location: "静岡県浜松市中区鍛冶町2-2", friends: [testFriendsUsers[2].id, testFriendsUsers[6].id, testFriendsUsers[13].id, testFriendsUsers[19].id],publication: publicationPost.publicPost),
+            PageModel(title: "友人の誕生日", albumID: testAlbumDatas[22].id, description: "友人の誕生日を祝った日", date: Date(), location: "京都府京都市東山区祇園町南側2-2-2", friends: [testFriendsUsers[1].id, testFriendsUsers[5].id, testFriendsUsers[10].id, testFriendsUsers[18].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "水族館の思い出", albumID: testAlbumDatas[23].id, description: "水族館での楽しいひととき", date: Date(), location: "神奈川県横浜市金沢区八景島", friends: [testFriendsUsers[0].id, testFriendsUsers[9].id, testFriendsUsers[11].id, testFriendsUsers[17].id],publication: publicationPost.publicPost),
+            PageModel(title: "美術館巡り", albumID: testAlbumDatas[24].id, description: "新しいアートに触れる", date: Date(), location: "東京都目黒区駒場4-4-4", friends: [testFriendsUsers[3].id, testFriendsUsers[7].id, testFriendsUsers[12].id, testFriendsUsers[16].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "海の日", albumID: testAlbumDatas[25].id, description: "海で遊んだ思い出", date: Date(), location: "神奈川県逗子市新宿1-1", friends: [testFriendsUsers[2].id, testFriendsUsers[8].id, testFriendsUsers[13].id, testFriendsUsers[14].id],publication: publicationPost.publicPost),
+            PageModel(title: "ハロウィンパーティー", albumID: testAlbumDatas[26].id, description: "仮装して楽しんだハロウィン", date: Date(), location: "東京都渋谷区神南1-1-1", friends: [testFriendsUsers[1].id, testFriendsUsers[6].id, testFriendsUsers[10].id, testFriendsUsers[19].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "ウィンタースポーツ", albumID: testAlbumDatas[27].id, description: "スキーやスノボーを楽しんだ日", date: Date(), location: "長野県長野市大字長野元善町2-2", friends: [testFriendsUsers[0].id, testFriendsUsers[7].id, testFriendsUsers[14].id, testFriendsUsers[18].id],publication: publicationPost.publicPost),
+            PageModel(title: "ビーチバーベキュー", albumID: testAlbumDatas[28].id, description: "夏のビーチでバーベキュー", date: Date(), location: "沖縄県那覇市久米2-2-2", friends: [testFriendsUsers[4].id, testFriendsUsers[9].id, testFriendsUsers[11].id, testFriendsUsers[15].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "アウトドアの冒険", albumID: testAlbumDatas[29].id, description: "自然の中での冒険", date: Date(), location: "岐阜県高山市奥飛騨温泉郷2-2", friends: [testFriendsUsers[3].id, testFriendsUsers[6].id, testFriendsUsers[12].id, testFriendsUsers[17].id],publication: publicationPost.publicPost),
+            PageModel(title: "友人との新年会", albumID: testAlbumDatas[30].id, description: "友人たちと新年を迎えた日", date: Date(), location: "東京都江戸川区葛西臨海公園1-1", friends: [testFriendsUsers[2].id, testFriendsUsers[8].id, testFriendsUsers[13].id, testFriendsUsers[16].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "芸術鑑賞", albumID: testAlbumDatas[31].id, description: "芸術作品を鑑賞した特別な日", date: Date(), location: "東京都中央区銀座5-5-5", friends: [testFriendsUsers[0].id, testFriendsUsers[7].id, testFriendsUsers[10].id, testFriendsUsers[14].id],publication: publicationPost.publicPost),
+            PageModel(title: "秋の遠足", albumID: testAlbumDatas[32].id, description: "秋の景色を楽しんだ遠足", date: Date(), location: "東京都府中市宮町1-1-1", friends: [testFriendsUsers[1].id, testFriendsUsers[9].id, testFriendsUsers[11].id, testFriendsUsers[18].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "冬の温泉旅行", albumID: testAlbumDatas[33].id, description: "冬の寒い日に温泉で温まった", date: Date(), location: "鹿児島県指宿市湯ノ浜5-5-5", friends: [testFriendsUsers[4].id, testFriendsUsers[6].id, testFriendsUsers[14].id, testFriendsUsers[19].id],publication: publicationPost.publicPost),
+            PageModel(title: "ハイキングとキャンプ", albumID: testAlbumDatas[34].id, description: "山中でのハイキングとキャンプ", date: Date(), location: "宮崎県西臼杵郡高千穂町押方1-1", friends: [testFriendsUsers[3].id, testFriendsUsers[8].id, testFriendsUsers[12].id, testFriendsUsers[15].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "春のピクニック", albumID: testAlbumDatas[35].id, description: "花見をしながらのんびり過ごした日", date: Date(), location: "東京都小金井市桜町2-2-2", friends: [testFriendsUsers[0].id, testFriendsUsers[7].id, testFriendsUsers[13].id, testFriendsUsers[17].id],publication: publicationPost.publicPost),
+            PageModel(title: "ランニング", albumID: testAlbumDatas[36].id, description: "健康的な朝のランニング", date: Date(), location: "東京都荒川区西日暮里1-1-1", friends: [testFriendsUsers[1].id, testFriendsUsers[5].id, testFriendsUsers[10].id, testFriendsUsers[16].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "夜の街を散策", albumID: testAlbumDatas[37].id, description: "美しい夜景を楽しみながらの散策", date: Date(), location: "東京都港区台場1-1", friends: [testFriendsUsers[2].id, testFriendsUsers[6].id, testFriendsUsers[11].id, testFriendsUsers[18].id],publication: publicationPost.publicPost),
+            PageModel(title: "新しいレストラン", albumID: testAlbumDatas[38].id, description: "話題のレストランで友達と食事", date: Date(), location: "東京都渋谷区神宮前5-5-5", friends: [testFriendsUsers[4].id, testFriendsUsers[9].id, testFriendsUsers[14].id, testFriendsUsers[19].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "趣味の時間", albumID: testAlbumDatas[39].id, description: "好きな趣味に没頭した日", date: Date(), location: "東京都中央区日本橋3-3-3", friends: [testFriendsUsers[0].id, testFriendsUsers[7].id, testFriendsUsers[12].id, testFriendsUsers[15].id],publication: publicationPost.publicPost),
+            PageModel(title: "冬の雪遊び", albumID: testAlbumDatas[0].id, description: "友達と雪で遊んだ楽しい日", date: Date(), location: "北海道旭川市花咲町1-1-1", friends: [testFriendsUsers[1].id, testFriendsUsers[8].id, testFriendsUsers[11].id, testFriendsUsers[16].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "山登り", albumID: testAlbumDatas[1].id, description: "自然を満喫した山登りの日", date: Date(), location: "長野県松本市安曇4-4-4", friends: [testFriendsUsers[3].id, testFriendsUsers[6].id, testFriendsUsers[12].id, testFriendsUsers[15].id],publication: publicationPost.publicPost),
+            PageModel(title: "サッカー試合", albumID: testAlbumDatas[2].id, description: "友達と参加したサッカー試合", date: Date(), location: "東京都渋谷区東3-3-3", friends: [testFriendsUsers[0].id, testFriendsUsers[7].id, testFriendsUsers[13].id, testFriendsUsers[19].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "観光地巡り", albumID: testAlbumDatas[3].id, description: "有名な観光地を巡った旅", date: Date(), location: "京都府京都市左京区鞍馬2-2-2", friends: [testFriendsUsers[2].id, testFriendsUsers[9].id, testFriendsUsers[14].id, testFriendsUsers[18].id],publication: publicationPost.publicPost),
+            PageModel(title: "海辺の散策", albumID: testAlbumDatas[4].id, description: "海辺を散策してリラックス", date: Date(), location: "神奈川県鎌倉市由比ガ浜5-5-5", friends: [testFriendsUsers[4].id, testFriendsUsers[8].id, testFriendsUsers[10].id, testFriendsUsers[17].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "美味しいレストラン", albumID: testAlbumDatas[5].id, description: "新しいレストランでの食事", date: Date(), location: "福岡県福岡市博多区中洲1-1-1", friends: [testFriendsUsers[1].id, testFriendsUsers[6].id, testFriendsUsers[12].id, testFriendsUsers[16].id],publication: publicationPost.publicPost),
+            PageModel(title: "釣り大会", albumID: testAlbumDatas[6].id, description: "湖で友達と釣りを楽しんだ", date: Date(), location: "滋賀県大津市本堅田4-4-4", friends: [testFriendsUsers[3].id, testFriendsUsers[5].id, testFriendsUsers[11].id, testFriendsUsers[14].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "スポーツクラブ", albumID: testAlbumDatas[7].id, description: "友達と一緒に汗を流した日", date: Date(), location: "東京都世田谷区上馬2-2-2", friends: [testFriendsUsers[0].id, testFriendsUsers[7].id, testFriendsUsers[13].id, testFriendsUsers[19].id],publication: publicationPost.publicPost),
+            PageModel(title: "自然散策", albumID: testAlbumDatas[8].id, description: "自然の中をゆっくりと散歩した", date: Date(), location: "神奈川県横須賀市西浦賀5-5-5", friends: [testFriendsUsers[4].id, testFriendsUsers[9].id, testFriendsUsers[14].id, testFriendsUsers[18].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "プールパーティー", albumID: testAlbumDatas[9].id, description: "プールでの楽しい時間", date: Date(), location: "沖縄県宜野湾市真志喜4-4-4", friends: [testFriendsUsers[2].id, testFriendsUsers[6].id, testFriendsUsers[11].id, testFriendsUsers[16].id],publication: publicationPost.publicPost),
+            PageModel(title: "花火大会", albumID: testAlbumDatas[10].id, description: "美しい花火を友達と見た日", date: Date(), location: "東京都墨田区押上3-3-3", friends: [testFriendsUsers[1].id, testFriendsUsers[8].id, testFriendsUsers[12].id, testFriendsUsers[17].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "登山の挑戦", albumID: testAlbumDatas[11].id, description: "新しい山に登ったチャレンジ", date: Date(), location: "山梨県南都留郡鳴沢村鳴沢5-5-5", friends: [testFriendsUsers[0].id, testFriendsUsers[7].id, testFriendsUsers[13].id, testFriendsUsers[19].id],publication: publicationPost.publicPost),
+            PageModel(title: "お寺巡り", albumID: testAlbumDatas[12].id, description: "歴史あるお寺を巡った一日", date: Date(), location: "奈良県奈良市奈良町6-6-6", friends: [testFriendsUsers[3].id, testFriendsUsers[9].id, testFriendsUsers[14].id, testFriendsUsers[18].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "ゴルフ日和", albumID: testAlbumDatas[13].id, description: "友達とゴルフを楽しんだ", date: Date(), location: "千葉県千葉市緑区鎌取2-2-2", friends: [testFriendsUsers[2].id, testFriendsUsers[6].id, testFriendsUsers[11].id, testFriendsUsers[15].id],publication: publicationPost.publicPost),
+            PageModel(title: "キャンプファイヤー", albumID: testAlbumDatas[14].id, description: "キャンプでの夜の思い出", date: Date(), location: "栃木県日光市中宮祠1-1", friends: [testFriendsUsers[4].id, testFriendsUsers[5].id, testFriendsUsers[10].id, testFriendsUsers[18].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "文化祭", albumID: testAlbumDatas[15].id, description: "学校の文化祭での楽しい時間", date: Date(), location: "愛知県豊橋市広小路3-3-3", friends: [testFriendsUsers[1].id, testFriendsUsers[8].id, testFriendsUsers[14].id, testFriendsUsers[19].id],publication: publicationPost.publicPost),
+            PageModel(title: "冬のスポーツ", albumID: testAlbumDatas[16].id, description: "スキー場で過ごした日", date: Date(), location: "福島県郡山市熱海町1-1-1", friends: [testFriendsUsers[0].id, testFriendsUsers[6].id, testFriendsUsers[12].id, testFriendsUsers[17].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "友達とゲーム", albumID: testAlbumDatas[17].id, description: "友達と一緒にゲームで盛り上がった", date: Date(), location: "東京都練馬区豊玉北3-3-3", friends: [testFriendsUsers[3].id, testFriendsUsers[7].id, testFriendsUsers[11].id, testFriendsUsers[15].id],publication: publicationPost.publicPost),
+            PageModel(title: "カフェ巡り", albumID: testAlbumDatas[18].id, description: "友達と一緒に新しいカフェを訪れた", date: Date(), location: "東京都世田谷区下北沢2-2-2", friends: [testFriendsUsers[2].id, testFriendsUsers[9].id, testFriendsUsers[13].id, testFriendsUsers[16].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "大自然の中でキャンプ", albumID: testAlbumDatas[19].id, description: "自然の中でリラックスしたキャンプ", date: Date(), location: "富山県黒部市宇奈月温泉5-5-5", friends: [testFriendsUsers[1].id, testFriendsUsers[8].id, testFriendsUsers[10].id, testFriendsUsers[18].id],publication: publicationPost.publicPost),
+            PageModel(title: "友人とのリゾート旅行", albumID: testAlbumDatas[20].id, description: "友人たちと一緒にリゾートでのんびり", date: Date(), location: "沖縄県石垣市石垣5-5-5", friends: [testFriendsUsers[0].id, testFriendsUsers[7].id, testFriendsUsers[12].id, testFriendsUsers[19].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "キャンプと釣り", albumID: testAlbumDatas[21].id, description: "自然の中で釣りとキャンプを楽しんだ", date: Date(), location: "静岡県伊東市松原町4-4-4", friends: [testFriendsUsers[3].id, testFriendsUsers[6].id, testFriendsUsers[14].id, testFriendsUsers[17].id],publication: publicationPost.publicPost),
+            PageModel(title: "美味しいカフェでブランチ", albumID: testAlbumDatas[22].id, description: "友人とおしゃれなカフェでブランチ", date: Date(), location: "大阪府大阪市中央区南船場3-3-3", friends: [testFriendsUsers[2].id, testFriendsUsers[5].id, testFriendsUsers[13].id, testFriendsUsers[18].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "初日の出", albumID: testAlbumDatas[23].id, description: "新年の初日の出を見に行った", date: Date(), location: "鹿児島県指宿市湯ノ浜5-5-5", friends: [testFriendsUsers[1].id, testFriendsUsers[7].id, testFriendsUsers[10].id, testFriendsUsers[19].id],publication: publicationPost.publicPost),
+            PageModel(title: "サマーキャンプ", albumID: testAlbumDatas[24].id, description: "夏のキャンプで過ごした思い出", date: Date(), location: "山梨県北杜市大泉町2-2-2", friends: [testFriendsUsers[0].id, testFriendsUsers[8].id, testFriendsUsers[11].id, testFriendsUsers[16].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "美術館巡り", albumID: testAlbumDatas[25].id, description: "友達とアートを楽しんだ日", date: Date(), location: "石川県金沢市本町6-6-6", friends: [testFriendsUsers[3].id, testFriendsUsers[9].id, testFriendsUsers[14].id, testFriendsUsers[15].id],publication: publicationPost.publicPost),
+            PageModel(title: "友人との夜景", albumID: testAlbumDatas[26].id, description: "夜景スポットで友人たちと過ごした夜", date: Date(), location: "兵庫県神戸市中央区4-4-4", friends: [testFriendsUsers[4].id, testFriendsUsers[6].id, testFriendsUsers[12].id, testFriendsUsers[18].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "友達と野球観戦", albumID: testAlbumDatas[27].id, description: "プロ野球の試合を友達と観戦", date: Date(), location: "福岡県北九州市小倉南区田原2-2-2", friends: [testFriendsUsers[2].id, testFriendsUsers[5].id, testFriendsUsers[13].id, testFriendsUsers[17].id],publication: publicationPost.publicPost),
+            PageModel(title: "湖畔でのリラックス", albumID: testAlbumDatas[28].id, description: "湖畔で友人と一緒にリラックス", date: Date(), location: "長野県諏訪市湖畔5-5-5", friends: [testFriendsUsers[1].id, testFriendsUsers[8].id, testFriendsUsers[10].id, testFriendsUsers[19].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "バーベキュー", albumID: testAlbumDatas[29].id, description: "バーベキューを友人たちと楽しんだ日", date: Date(), location: "愛知県岡崎市岡町2-2-2", friends: [testFriendsUsers[0].id, testFriendsUsers[7].id, testFriendsUsers[11].id, testFriendsUsers[16].id],publication: publicationPost.publicPost),
+            PageModel(title: "温泉旅行", albumID: testAlbumDatas[30].id, description: "温泉でリラックスした休日", date: Date(), location: "群馬県渋川市伊香保町3-3-3", friends: [testFriendsUsers[4].id, testFriendsUsers[6].id, testFriendsUsers[14].id, testFriendsUsers[18].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "友達とのショッピング", albumID: testAlbumDatas[31].id, description: "ショッピングで友人と楽しい時間", date: Date(), location: "東京都新宿区歌舞伎町1-1-1", friends: [testFriendsUsers[2].id, testFriendsUsers[5].id, testFriendsUsers[12].id, testFriendsUsers[15].id],publication: publicationPost.publicPost),
+            PageModel(title: "ビーチでのひととき", albumID: testAlbumDatas[32].id, description: "ビーチでリラックスしたひととき", date: Date(), location: "神奈川県逗子市桜山1-1-1", friends: [testFriendsUsers[1].id, testFriendsUsers[9].id, testFriendsUsers[13].id, testFriendsUsers[16].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "カラオケパーティー", albumID: testAlbumDatas[33].id, description: "カラオケで歌いながら盛り上がった日", date: Date(), location: "大阪府吹田市山田4-4-4", friends: [testFriendsUsers[0].id, testFriendsUsers[7].id, testFriendsUsers[10].id, testFriendsUsers[19].id],publication: publicationPost.publicPost),
+            PageModel(title: "スイーツ巡り", albumID: testAlbumDatas[34].id, description: "甘いスイーツをたくさん食べた日", date: Date(), location: "福岡県福岡市中央区天神2-2-2", friends: [testFriendsUsers[3].id, testFriendsUsers[6].id, testFriendsUsers[14].id, testFriendsUsers[17].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "アスレチック体験", albumID: testAlbumDatas[35].id, description: "アウトドアでアスレチックに挑戦", date: Date(), location: "神奈川県横浜市鶴見区市場3-3-3", friends: [testFriendsUsers[2].id, testFriendsUsers[8].id, testFriendsUsers[12].id, testFriendsUsers[18].id],publication: publicationPost.publicPost),
+            PageModel(title: "ピクニック", albumID: testAlbumDatas[36].id, description: "公園でのんびりピクニック", date: Date(), location: "埼玉県さいたま市大宮区北袋町2-2-2", friends: [testFriendsUsers[1].id, testFriendsUsers[9].id, testFriendsUsers[10].id, testFriendsUsers[16].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "カフェでの読書", albumID: testAlbumDatas[37].id, description: "カフェでのんびり読書した時間", date: Date(), location: "京都府京都市中京区烏丸1-1-1", friends: [testFriendsUsers[0].id, testFriendsUsers[7].id, testFriendsUsers[14].id, testFriendsUsers[17].id],publication: publicationPost.publicPost),
+            PageModel(title: "海水浴", albumID: testAlbumDatas[38].id, description: "夏の海での水遊び", date: Date(), location: "宮崎県宮崎市青島3-3-3", friends: [testFriendsUsers[4].id, testFriendsUsers[6].id, testFriendsUsers[11].id, testFriendsUsers[18].id],publication: publicationPost.unPublicPost),
+            PageModel(title: "テラスでのカフェ", albumID: testAlbumDatas[39].id, description: "テラスのあるカフェでリラックス", date: Date(), location: "東京都港区六本木6-6-6", friends: [testFriendsUsers[3].id, testFriendsUsers[5].id, testFriendsUsers[13].id, testFriendsUsers[19].id],publication: publicationPost.unPublicPost)
+
         ]
+
         
         testPageImageDatas = [
             ImageModel(pageID: testPageDatas[0].id, image: [IMG.defaultAlbumImage, IMG.defaultAlbumImage, IMG.defaultAlbumImage]),
@@ -178,7 +228,9 @@ class TestData{
         for page in testPageDatas{
             for image in testPageImageDatas{
                 if page.id == image.pageID{
-                    page.images.append(image)
+                    for img in image.image{
+                        page.images.append(img)
+                    }
                 }
             }
         }

@@ -7,10 +7,15 @@
 
 import UIKit
 
+protocol AlbumCollectionViewDelegate:AnyObject{
+    func didSelectedCell(albumData:AlbumModel)
+}
+
 class AlbumCollectionView: UIView,FriendsCollectionViewDelegate {
     
     var showAlbumsArray:[AlbumModel] = []
     var friendsData:[UserModel] = DataStore.shared.getAllFriends()
+    weak var delegate:AlbumCollectionViewDelegate?
 
     //MARK: - components
     private lazy var albumCollectionView:UICollectionView = {
@@ -110,10 +115,8 @@ extension AlbumCollectionView:UICollectionViewDataSource,UICollectionViewDelegat
         return showAlbumsArray.count
     }
     
-    
-    //ここが呼び出されていないかもしれない。
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AlbumCell", for: indexPath) as? AlbumCollectionViewCell{
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AlbumCell", for: indexPath) as? AlbumCollectionViewCell {
             //albumModelを一つずつ出して初期化
             let albumData = showAlbumsArray[indexPath.row]
             let postUserID = albumData.userID
@@ -131,4 +134,15 @@ extension AlbumCollectionView:UICollectionViewDataSource,UICollectionViewDelegat
             return UICollectionViewCell()
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let albumData = showAlbumsArray[indexPath.row]
+        //画面遷移するコードを実装
+        if let delegate = delegate {
+            delegate.didSelectedCell(albumData: albumData)
+        } else {
+            print("err")
+        }
+    }
+    
 }

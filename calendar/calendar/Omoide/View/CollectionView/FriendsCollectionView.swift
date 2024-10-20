@@ -12,10 +12,26 @@ protocol FriendsCollectionViewDelegate:AnyObject{
     func showAllAlbums()
 }
 
+enum FriendCollectionPattern{
+    case Root
+    case notRoot
+}
+
 class FriendsCollectionView: UIView {
     
     weak var delegate:FriendsCollectionViewDelegate?
-    var collectionViewShowCount:Int = DataStore.shared.getAllFriends().count + 2
+    var collectionPattern:FriendCollectionPattern
+    var collectionViewShowCount:Int
+    
+    var dataSource:[UserModel] = [] {
+        //初期化の際はdidsetは動作しないらしい
+        didSet{
+            collectionViewShowCount = dataSource.count
+            if collectionPattern == .Root{
+                collectionViewShowCount += 2
+            }
+        }
+    }
     
     //MARK: - components
     private lazy var collectionView:UICollectionView = {
@@ -43,14 +59,24 @@ class FriendsCollectionView: UIView {
     }
     
     //MARK: - init
-    override init(frame: CGRect) {
+    
+    init(frame: CGRect,dataSource:[UserModel],cellPattern:FriendCollectionPattern) {
+        //プロパティの初期化
+        self.collectionPattern = cellPattern
+        self.dataSource = dataSource
+        if collectionPattern == .Root{
+            self.collectionViewShowCount = dataSource.count + 2
+        }else{
+            self.collectionViewShowCount = dataSource.count
+        }
+        
         super.init(frame: frame)
         self.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(FriendCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.dataSource = self
         collectionView.delegate = self
-        
         setupComponents()
+        collectionView.reloadData()
         let initialIndexPath = IndexPath(row: 0, section: 0)
         collectionView.selectItem(at: initialIndexPath, animated: false, scrollPosition: .top)
     }
@@ -73,34 +99,49 @@ extension FriendsCollectionView:UICollectionViewDelegate,UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? FriendCollectionViewCell{
-            //一つめのcellは全員表示のcellにする
-            if indexPath.row == 0 {
-                cell.configure(data: FriendCollectionViewDefaultModel(text: "全員", image: IMG.allFriends))
-                cell.isSelected = true
-            } 
-            //二つ目のcellは友達追加のcellにする
-            else if indexPath.row == 1{
-                cell.configure(data: FriendCollectionViewDefaultModel(text: "知り合い追加", image: IMG.addFriend))
-            } 
-            //三つ目以降はfriendのiconを出す
-            else {
-                let userList = DataStore.shared.getAllFriends()
-                let userData = userList[indexPath.row - 2]
+        
+        switch collectionPattern{
+            
+        case FriendCollectionPattern.Root:
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? FriendCollectionViewCell{
+                //一つめのcellは全員表示のcellにする
+                if indexPath.row == 0 {
+                    cell.configure(data: FriendCollectionViewDefaultModel(text: "全員", image: IMG.allFriendsOfCollection))
+                    cell.isSelected = true
+                }
+                //二つ目のcellは友達追加のcellにする
+                else if indexPath.row == 1{
+                    cell.configure(data: FriendCollectionViewDefaultModel(text: "知り合い追加", image: IMG.addFriendOfCollection))
+                }
+                //三つ目以降はfriendのiconを出す
+                else {
+                    let userData = dataSource[indexPath.row - 2]
+                    cell.configure(data: FriendsCollectionViewModel(firstName: userData.firstName,
+                                                                    lastName: userData.lastName,
+                                                                    firendImage: userData.userIcon))
+                }
+                return cell
+            } else {
+                return UICollectionViewCell()
+            }
+            
+        case FriendCollectionPattern.notRoot:
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? FriendCollectionViewCell{
+                let userData = dataSource[indexPath.row]
                 cell.configure(data: FriendsCollectionViewModel(firstName: userData.firstName,
                                                                 lastName: userData.lastName,
                                                                 firendImage: userData.userIcon))
+                return cell
+            } else {
+                return UICollectionViewCell()
             }
-            return cell
-        } else {
-            return UICollectionViewCell()
         }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? FriendCollectionViewCell {
             cell.isSelected = true
-            print("Selected: \(indexPath)")
             
             //cellをタップしたらアルバム表示のロジックを走らせる
             //１つ目のcellタップですべてのアルバムを表示する
@@ -113,9 +154,8 @@ extension FriendsCollectionView:UICollectionViewDelegate,UICollectionViewDataSou
             } 
             //3つ目以降は当該friendが投稿したalbumを表示する
             else {
-                let friendsList = DataStore.shared.getAllFriends()
                 //タップされたindexPathを出す
-                let selectedFriendData = friendsList[indexPath.row - 2]
+                let selectedFriendData = dataSource[indexPath.row - 2]
                 let selectedFriendID = selectedFriendData.id
                 delegate?.didSelectedCell(userID: selectedFriendID)
             }

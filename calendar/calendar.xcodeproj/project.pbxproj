@@ -45,13 +45,17 @@
 		F0BEDAE82CB4DDA700C20D85 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDAE72CB4DDA700C20D85 /* TestData.swift */; };
 		F0BEDAEA2CB4DDB600C20D85 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDAE92CB4DDB600C20D85 /* DataStore.swift */; };
 		F0BEDB032CB520C500C20D85 /* UUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDB022CB520C500C20D85 /* UUID.swift */; };
-		F0BEDB082CB64DA500C20D85 /* AlbumCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDB042CB64DA500C20D85 /* AlbumCollectionViewModel.swift */; };
-		F0BEDB092CB64DA500C20D85 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDB052CB64DA500C20D85 /* AlbumModel.swift */; };
+		F0BEDB092CB64DA500C20D85 /* AlbumCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDB052CB64DA500C20D85 /* AlbumCollectionViewModel.swift */; };
 		F0BEDB0A2CB64DA500C20D85 /* FriendsCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDB062CB64DA500C20D85 /* FriendsCollectionViewModel.swift */; };
 		F0BEDB0C2CB7D9DF00C20D85 /* SearchRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BEDB0B2CB7D9DF00C20D85 /* SearchRootViewController.swift */; };
 		F0CE37C12CBBDC8400E4B269 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0CE37C02CBBDC8400E4B269 /* GoogleService-Info.plist */; };
 		F0CE37C32CBC007200E4B269 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE37C22CBC007200E4B269 /* LoginView.swift */; };
 		F0CE37C62CBD8CEC00E4B269 /* ChangeDisplayFormatButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE37C52CBD8CEC00E4B269 /* ChangeDisplayFormatButtonsView.swift */; };
+		F0CE37CA2CBE11B400E4B269 /* AlbumDitailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE37C92CBE11B400E4B269 /* AlbumDitailView.swift */; };
+		F0CE37CD2CBE1A6C00E4B269 /* ShowMapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE37CC2CBE1A6C00E4B269 /* ShowMapButton.swift */; };
+		F0CE37CF2CBED3C100E4B269 /* AlbumDitailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE37CE2CBED3C100E4B269 /* AlbumDitailViewController.swift */; };
+		F0CE37D52CC393D100E4B269 /* PageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE37D42CC393D100E4B269 /* PageCollectionViewCell.swift */; };
+		F0CE37D72CC393EE00E4B269 /* PageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE37D62CC393EE00E4B269 /* PageCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,13 +101,17 @@
 		F0BEDAE72CB4DDA700C20D85 /* TestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestData.swift; path = calendar/TestData.swift; sourceTree = SOURCE_ROOT; };
 		F0BEDAE92CB4DDB600C20D85 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataStore.swift; path = calendar/DataStore.swift; sourceTree = SOURCE_ROOT; };
 		F0BEDB022CB520C500C20D85 /* UUID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUID.swift; sourceTree = "<group>"; };
-		F0BEDB042CB64DA500C20D85 /* AlbumCollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewModel.swift; sourceTree = "<group>"; };
-		F0BEDB052CB64DA500C20D85 /* AlbumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
+		F0BEDB052CB64DA500C20D85 /* AlbumCollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewModel.swift; sourceTree = "<group>"; };
 		F0BEDB062CB64DA500C20D85 /* FriendsCollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsCollectionViewModel.swift; sourceTree = "<group>"; };
 		F0BEDB0B2CB7D9DF00C20D85 /* SearchRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRootViewController.swift; sourceTree = "<group>"; };
 		F0CE37C02CBBDC8400E4B269 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F0CE37C22CBC007200E4B269 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F0CE37C52CBD8CEC00E4B269 /* ChangeDisplayFormatButtonsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeDisplayFormatButtonsView.swift; sourceTree = "<group>"; };
+		F0CE37C92CBE11B400E4B269 /* AlbumDitailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDitailView.swift; sourceTree = "<group>"; };
+		F0CE37CC2CBE1A6C00E4B269 /* ShowMapButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMapButton.swift; sourceTree = "<group>"; };
+		F0CE37CE2CBED3C100E4B269 /* AlbumDitailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDitailViewController.swift; sourceTree = "<group>"; };
+		F0CE37D42CC393D100E4B269 /* PageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCollectionViewCell.swift; sourceTree = "<group>"; };
+		F0CE37D62CC393EE00E4B269 /* PageCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +274,7 @@
 			children = (
 				F02354BF2CA84232005F6E20 /* CustomMenus.swift */,
 				F0BEDAA32CB1568E00C20D85 /* Custom.swift */,
+				F0CE37CC2CBE1A6C00E4B269 /* ShowMapButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -293,9 +302,8 @@
 		F0BEDB072CB64DA500C20D85 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F0BEDB052CB64DA500C20D85 /* AlbumModel.swift */,
-				F0BEDB042CB64DA500C20D85 /* AlbumCollectionViewModel.swift */,
 				F0BEDB062CB64DA500C20D85 /* FriendsCollectionViewModel.swift */,
+				F0BEDB052CB64DA500C20D85 /* AlbumCollectionViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -304,9 +312,21 @@
 			isa = PBXGroup;
 			children = (
 				F0CE37C52CBD8CEC00E4B269 /* ChangeDisplayFormatButtonsView.swift */,
+				F0CE37CB2CBE11B900E4B269 /* AlbumDitail */,
 				F0BEDAAD2CB3994100C20D85 /* CollectionView */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F0CE37CB2CBE11B900E4B269 /* AlbumDitail */ = {
+			isa = PBXGroup;
+			children = (
+				F0CE37CE2CBED3C100E4B269 /* AlbumDitailViewController.swift */,
+				F0CE37C92CBE11B400E4B269 /* AlbumDitailView.swift */,
+				F0CE37D42CC393D100E4B269 /* PageCollectionViewCell.swift */,
+				F0CE37D62CC393EE00E4B269 /* PageCollectionView.swift */,
+			);
+			path = AlbumDitail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,7 +447,9 @@
 			files = (
 				F02354A62CA6F229005F6E20 /* SettingRootModel.swift in Sources */,
 				F0BEDAA42CB1568E00C20D85 /* Custom.swift in Sources */,
+				F0CE37CD2CBE1A6C00E4B269 /* ShowMapButton.swift in Sources */,
 				F0BEDB0C2CB7D9DF00C20D85 /* SearchRootViewController.swift in Sources */,
+				F0CE37D52CC393D100E4B269 /* PageCollectionViewCell.swift in Sources */,
 				F02354A42CA6F170005F6E20 /* OmoideRootView.swift in Sources */,
 				F0BEDA9C2CAF135800C20D85 /* ScheduleRootView.swift in Sources */,
 				F02354C62CA93840005F6E20 /* CustomFont.swift in Sources */,
@@ -438,17 +460,19 @@
 				F02354942CA6F0A3005F6E20 /* CalendarRootViewController.swift in Sources */,
 				F02354712CA6CB78005F6E20 /* AppDelegate.swift in Sources */,
 				F02354BA2CA709B8005F6E20 /* CustomColor.swift in Sources */,
+				F0CE37D72CC393EE00E4B269 /* PageCollectionView.swift in Sources */,
 				F0BEDAEA2CB4DDB600C20D85 /* DataStore.swift in Sources */,
+				F0CE37CA2CBE11B400E4B269 /* AlbumDitailView.swift in Sources */,
+				F0CE37CF2CBED3C100E4B269 /* AlbumDitailViewController.swift in Sources */,
 				F0BEDAE82CB4DDA700C20D85 /* TestData.swift in Sources */,
 				F0BEDB0A2CB64DA500C20D85 /* FriendsCollectionViewModel.swift in Sources */,
 				F02354922CA6F096005F6E20 /* ScheduleRootViewController.swift in Sources */,
 				F0BEDAA02CB02C6F00C20D85 /* CalenderUseCase.swift in Sources */,
 				F0BEDAA82CB28A4B00C20D85 /* FriendCollectionViewCell.swift in Sources */,
-				F0BEDB082CB64DA500C20D85 /* AlbumCollectionViewModel.swift in Sources */,
 				F02354C42CA8FB13005F6E20 /* UImage.swift in Sources */,
 				F02354892CA6D7D5005F6E20 /* CustomImage.swift in Sources */,
 				F02354AC2CA6F25F005F6E20 /* CalendarRootModel.swift in Sources */,
-				F0BEDB092CB64DA500C20D85 /* AlbumModel.swift in Sources */,
+				F0BEDB092CB64DA500C20D85 /* AlbumCollectionViewModel.swift in Sources */,
 				F02354C02CA84232005F6E20 /* CustomMenus.swift in Sources */,
 				F023548B2CA6F034005F6E20 /* OmoideRootViewController.swift in Sources */,
 				F0BEDAAC2CB3993900C20D85 /* FriendsCollectionView.swift in Sources */,

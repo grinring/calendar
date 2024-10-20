@@ -14,15 +14,18 @@ class DataStore {
     
     static private var hostUserData:UserModel!
     static private var friendsData:[UserModel] = []
+    static private var albumsData:[AlbumModel] = []
     
     init(){
         fetchHostUserData()
         fetchFriendsData()
+        fetchAlbumData()
     }
 
 }
 
 extension DataStore{
+    
     func getHostUserData()->UserModel{
         fetchHostUserData()
         return DataStore.hostUserData
@@ -44,6 +47,7 @@ extension DataStore{
     
 }
 
+//本番環境ではここでAPI通信する
 extension DataStore{
     
     //変数を初期化して空にしてから、再度データベースから最新のデータを取得する。
@@ -69,8 +73,17 @@ extension DataStore{
         //
     }
     
+    //変数を初期化して空にしてから、再度データベースから最新のデータを取得する
     func fetchAlbumData(){
+        //テスト用のフェッチ albumDatasにalbumを代入してゆく
+        DataStore.albumsData = []
+        for album in testData.testAlbumDatas{
+            DataStore.albumsData.append(album)
+        }
         
+        //
+        //本番ではデータベースからDataStore.friendDataにデータ呼び出しする。
+        //
     }
     
 }
